@@ -7,116 +7,304 @@ let carouselInterval = null;
 let cart = [];
 let favorites = [];
 let userRatings = {};
+let usersData = [];
+let currentQuantity = 1;
 
 // ============= INITIALIZATION =============
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    // First load from localStorage
     loadFromLocalStorage();
     initializeTheme();
-    loadBooksData();
+    
+    // Initialize event listeners first so they're ready
     initializeEventListeners();
+    
+    // Then load data
+    await loadBooksData();
+    loadUsersData();
+    
+    // Initialize router and UI
     initializeRouter();
     updateCartCount();
     updateLoginStatus();
+    
+    // Initial page render
+    renderCurrentPage();
 });
 
 // ============= XML DATA LOADING =============
 async function loadBooksData() {
     showLoading(true);
     try {
-        // Since we can't actually load an external XML file in this environment,
-        // we'll use the XML string directly
-        const xmlString = "books.xml"
+        // Load XML file
+        const response = await fetch('books.xml');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const xmlText = await response.text();
+        
+        // Fix common XML issues before parsing
+        const fixedXmlText = xmlText
+            .replace(/&(?!amp;|lt;|gt;|quot;|#39;|#x27;)/g, '&amp;') // Fix unescaped ampersands
+            .replace(/<price>(\d+\.\d+)<\/price>\s*<price>(\d+\.\d+)<\/price>/g, '<price>$1</price>'); // Remove duplicate price tags
         
         const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+        const xmlDoc = parser.parseFromString(fixedXmlText, 'text/xml');
+        
+        // Check for XML parsing errors
+        const parserError = xmlDoc.querySelector('parsererror');
+        if (parserError) {
+            console.warn('XML parsing warnings:', parserError.textContent);
+            // Continue anyway - we'll parse what we can
+        }
         
         booksData = parseXMLBooks(xmlDoc);
-        console.log('Books loaded:', booksData.length);
-        console.log('Genres found:', [...new Set(booksData.map(book => book.genre))]);
+        
+        console.log('Total books loaded:', booksData.length);
+        const genres = [...new Set(booksData.map(book => book.genre))];
+        console.log('Genres found:', genres);
+        
         showLoading(false);
-        renderCurrentPage();
     } catch (error) {
         console.error('Error loading books:', error);
         showLoading(false);
         // Fallback to sample data if XML fails
-        alert('Error loading books data. Please refresh the page.');
+        booksData = getSampleBooks();
+        renderCurrentPage();
+    }
+}
+
+// Sample fallback books if XML fails
+function getSampleBooks() {
+    return [
+        {
+            id: 1,
+            title: "Where the Wild Things Are",
+            author: "Maurice Sendak",
+            genre: "Children's Books",
+            price: "18.95",
+            rating: "4.9",
+            description: "A classic children's book about imagination and adventure.",
+            stock: 120
+        },
+        {
+            id: 2,
+            title: "The Very Hungry Caterpillar",
+            author: "Eric Carle",
+            genre: "Children's Books",
+            price: "10.99",
+            rating: "4.9",
+            description: "The story of a caterpillar's transformation into a butterfly.",
+            stock: 200
+        },
+        {
+            id: 3,
+            title: "Charlotte's Web",
+            author: "E.B. White",
+            genre: "Children's Books",
+            price: "14.99",
+            rating: "4.8",
+            description: "A heartwarming tale of friendship between a pig and a spider.",
+            stock: 85
+        },
+        {
+            id: 4,
+            title: "Goodnight Moon",
+            author: "Margaret Wise Brown",
+            genre: "Children's Books",
+            price: "8.99",
+            rating: "4.8",
+            description: "A soothing bedtime classic for toddlers.",
+            stock: 150
+        }
+    ];
+}
+
+async function loadUsersData() {
+    try {
+        const response = await fetch('users.xml');
+        if (!response.ok) return;
+        
+        const xmlText = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+        
+        const userNodes = xmlDoc.getElementsByTagName('user');
+        usersData = Array.from(userNodes).map(user => ({
+            email: user.getElementsByTagName('email')[0]?.textContent || '',
+            password: user.getElementsByTagName('password')[0]?.textContent || ''
+        }));
+    } catch (error) {
+        console.log('No users XML found, starting fresh');
     }
 }
 
 function parseXMLBooks(xmlDoc) {
     const books = [];
-    const bookNodes = xmlDoc.getElementsByTagName('book');
+    // Handle both <book> tags directly under root or nested
+    let bookNodes = xmlDoc.getElementsByTagName('book');
+    
+    // If no books found, try different approach
+    if (bookNodes.length === 0) {
+        // Try to get books from bookstore element
+        const bookstore = xmlDoc.querySelector('bookstore');
+        if (bookstore) {
+            bookNodes = bookstore.getElementsByTagName('book');
+        }
+    }
+    
+    console.log('Total book nodes found:', bookNodes.length);
     
     for (let i = 0; i < bookNodes.length; i++) {
         const book = bookNodes[i];
         
-        // Get the ID from the attribute
-        const idAttr = book.getAttribute('id');
-        const id = idAttr ? parseInt(idAttr) : (i + 1);
-        
-        // Get other elements
-        const title = book.getElementsByTagName('title')[0]?.textContent || 'Unknown Title';
-        const author = book.getElementsByTagName('author')[0]?.textContent || 'Unknown Author';
-        const genre = book.getElementsByTagName('genre')[0]?.textContent || 'General';
-        
-        // Handle price - there might be duplicate price tags in some entries
-        const priceElements = book.getElementsByTagName('price');
-        let priceText = '9.99';
-        if (priceElements.length > 0) {
-            priceText = priceElements[0].textContent;
+        try {
+            // Get the ID from the attribute
+            const idAttr = book.getAttribute('id');
+            let id;
+            if (idAttr) {
+                id = parseInt(idAttr);
+            } else {
+                // Try to get ID from text content
+                const idElement = book.querySelector('id');
+                if (idElement) {
+                    id = parseInt(idElement.textContent) || (i + 1);
+                } else {
+                    id = i + 1;
+                }
+            }
+            
+            // Get title - try multiple selectors
+            let title = '';
+            const titleElement = book.querySelector('title');
+            if (titleElement) {
+                title = titleElement.textContent?.trim() || `Book ${id}`;
+            } else {
+                title = `Book ${id}`;
+            }
+            
+            // Get author
+            let author = '';
+            const authorElement = book.querySelector('author');
+            if (authorElement) {
+                author = authorElement.textContent?.trim() || 'Unknown Author';
+            } else {
+                author = 'Unknown Author';
+            }
+            
+            // Get genre
+            let genre = '';
+            const genreElement = book.querySelector('genre');
+            if (genreElement) {
+                genre = genreElement.textContent?.trim() || 'General';
+                // Decode HTML entities
+                genre = decodeHTMLEntities(genre);
+            } else {
+                genre = 'General';
+            }
+            
+            // Get price - handle multiple price tags
+            let price = '9.99';
+            const priceElements = book.querySelectorAll('price');
+            if (priceElements.length > 0) {
+                // Use the first price element
+                price = priceElements[0].textContent?.trim() || '9.99';
+                // Clean price string
+                price = price.replace(/[^\d.]/g, '');
+                if (!price || isNaN(parseFloat(price))) {
+                    price = '9.99';
+                }
+            }
+            
+            // Get rating
+            let rating = '3.0';
+            const ratingElement = book.querySelector('rating');
+            if (ratingElement) {
+                rating = ratingElement.textContent?.trim() || '3.0';
+                rating = parseFloat(rating).toFixed(1);
+            }
+            
+            // Get description
+            let description = '';
+            const descriptionElement = book.querySelector('description');
+            if (descriptionElement) {
+                description = descriptionElement.textContent?.trim() || 
+                             `${title} is a captivating ${genre.toLowerCase()} book.`;
+            } else {
+                description = `${title} is a captivating ${genre.toLowerCase()} book.`;
+            }
+            
+            // Get stock
+            let stock = 50;
+            const stockElements = book.querySelectorAll('stock');
+            if (stockElements.length > 0) {
+                const stockText = stockElements[0].textContent?.trim();
+                if (stockText && !isNaN(parseInt(stockText))) {
+                    stock = parseInt(stockText);
+                }
+            }
+            
+            books.push({
+                id: id,
+                title: title,
+                author: author,
+                genre: genre,
+                price: parseFloat(price).toFixed(2),
+                rating: rating,
+                description: description,
+                stock: stock
+            });
+            
+            console.log(`Parsed book ${id}: ${title} - ${genre}`);
+            
+        } catch (error) {
+            console.error(`Error parsing book ${i + 1}:`, error);
+            // Skip this book but continue with others
+            continue;
         }
-        const price = parseFloat(priceText).toFixed(2);
-        
-        const rating = parseFloat(book.getElementsByTagName('rating')[0]?.textContent || '3.0').toFixed(1);
-        const description = book.getElementsByTagName('description')[0]?.textContent || 
-                           `${title} is a captivating ${genre.toLowerCase()} book.`;
-        
-        // Handle stock
-        const stockElements = book.getElementsByTagName('stock');
-        let stock = 50;
-        if (stockElements.length > 0) {
-            stock = parseInt(stockElements[0].textContent) || 50;
-        }
-        
-        books.push({
-            id: id,
-            title: title,
-            author: author,
-            genre: genre.trim(), // Trim any whitespace
-            price: price,
-            rating: rating,
-            description: description,
-            stock: stock
-        });
     }
     
+    // Sort books by ID to maintain order
+    books.sort((a, b) => a.id - b.id);
+    
+    console.log('Successfully parsed', books.length, 'books');
     return books;
+}
+
+// Helper function to decode HTML entities
+function decodeHTMLEntities(text) {
+    if (!text) return '';
+    const textArea = document.createElement('textarea');
+    textArea.innerHTML = text;
+    return textArea.value;
 }
 
 // ============= ROUTER =============
 function initializeRouter() {
+    // Initial render
+    setTimeout(() => {
+        renderCurrentPage();
+    }, 100);
+    
     window.addEventListener('hashchange', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         renderCurrentPage();
     });
-    window.addEventListener('load', renderCurrentPage);
 }
 
 function renderCurrentPage() {
     const hash = window.location.hash || '#/';
-    const mainContent = document.getElementById('mainContent');
     
     // Scroll to top when changing pages
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    if (hash === '#/' || hash === '') {
+    if (hash === '#/' || hash === '' || hash === '#') {
         renderHomePage();
     } else if (hash.startsWith('#/book/')) {
         const bookId = parseInt(hash.split('/')[2]);
         renderBookDetailPage(bookId);
     } else if (hash.startsWith('#/genre/')) {
         const genre = decodeURIComponent(hash.split('/')[2]);
-        console.log('Navigating to genre:', genre);
         renderGenrePage(genre);
     } else if (hash === '#/genres') {
         renderAllGenresPage();
@@ -128,18 +316,37 @@ function renderCurrentPage() {
         renderHomePage();
     }
     
-    renderCarousel();
+    // Only render carousel if we have books
+    if (booksData.length > 0) {
+        renderCarousel();
+    }
 }
 
 // ============= PAGE RENDERERS =============
 function renderHomePage() {
     const mainContent = document.getElementById('mainContent');
-    // Get unique genres from all books
+    
+    // Show loading if books not loaded yet
+    if (booksData.length === 0) {
+        mainContent.innerHTML = `
+            <div class="container">
+                <div class="hero">
+                    <h1>Welcome to Bookify</h1>
+                    <p>Loading books...</p>
+                </div>
+            </div>
+        `;
+        return;
+    }
+    
+    // Get unique genres and sort them
     const allGenres = booksData.map(book => book.genre);
     const uniqueGenres = [...new Set(allGenres)].sort();
-    console.log('All genres found:', uniqueGenres);
     
-    const featuredBooks = booksData.slice(0, 16); // Show 16 books (4 rows x 4 books)
+    console.log('Rendering home page with genres:', uniqueGenres);
+    
+    // Take up to 16 featured books, but ensure we have some
+    const featuredBooks = booksData.slice(0, Math.min(16, booksData.length));
     
     mainContent.innerHTML = `
         <div class="container">
@@ -164,28 +371,33 @@ function renderHomePage() {
                 </div>
             </div>
             
-            <div class="books-section">
-                <h2>Featured Books</h2>
-                <div class="books-grid books-grid-four">
-                    ${featuredBooks.map(book => createBookCard(book)).join('')}
+            ${featuredBooks.length > 0 ? `
+                <div class="books-section">
+                    <h2>Featured Books</h2>
+                    <div class="books-grid books-grid-four">
+                        ${featuredBooks.map(book => createBookCard(book)).join('')}
+                    </div>
                 </div>
-            </div>
+            ` : ''}
         </div>
     `;
 }
 
 function renderGenrePage(genre) {
     const mainContent = document.getElementById('mainContent');
-    console.log('Rendering genre page for:', genre);
-    console.log('Available books:', booksData.map(b => ({id: b.id, title: b.title, genre: b.genre})));
     
-    const genreBooks = booksData.filter(book => book.genre === genre);
-    console.log('Found books for genre', genre, ':', genreBooks.length);
+    // Decode URI component first, then HTML entities
+    let decodedGenre = decodeURIComponent(genre);
+    decodedGenre = decodeHTMLEntities(decodedGenre);
+    
+    const genreBooks = booksData.filter(book => book.genre === decodedGenre);
+    
+    console.log(`Rendering genre page for: ${decodedGenre}, found ${genreBooks.length} books`);
     
     if (genreBooks.length === 0) {
         mainContent.innerHTML = `
             <div class="container">
-                <h1>${genre}</h1>
+                <h1>${decodedGenre}</h1>
                 <div class="empty-state">
                     <h2>No books found in this genre</h2>
                     <p>Try browsing other genres</p>
@@ -198,13 +410,13 @@ function renderGenrePage(genre) {
     
     mainContent.innerHTML = `
         <div class="container">
-            <h1>${genre}</h1>
+            <h1>${decodedGenre}</h1>
             
             <div class="filters">
                 <h3>Filter & Sort</h3>
                 <div class="filter-group">
                     <label>Sort by:</label>
-                    <select id="sortSelect" onchange="applySorting('${encodeURIComponent(genre)}')">
+                    <select id="sortSelect" onchange="applySorting('${encodeURIComponent(decodedGenre)}')">
                         <option value="title">Title</option>
                         <option value="price-low">Price: Low to High</option>
                         <option value="price-high">Price: High to Low</option>
@@ -224,7 +436,7 @@ function renderGenrePage(genre) {
 
 function renderAllGenresPage() {
     const mainContent = document.getElementById('mainContent');
-    // Get unique genres from all books
+    
     const allGenres = booksData.map(book => book.genre);
     const uniqueGenres = [...new Set(allGenres)].sort();
     
@@ -284,14 +496,14 @@ function renderBookDetailPage(bookId) {
                     <div class="quantity-selector">
                         <label>Quantity:</label>
                         <button onclick="changeQuantity(-1)">-</button>
-                        <input type="number" id="quantity" value="1" min="1" max="${book.stock}">
+                        <input type="number" id="quantity" value="${currentQuantity}" min="1" max="${book.stock}">
                         <button onclick="changeQuantity(1)">+</button>
                     </div>
                     
                     <div class="book-actions">
                         <button class="btn btn-primary" onclick="addToCart(${book.id})">Add to Cart</button>
                         <button class="btn btn-favorite ${isFavorite(book.id) ? 'active' : ''}" onclick="toggleFavorite(${book.id})">
-                            ${isFavorite(book.id) ? '❤️' : '🤍'}
+                            ${isFavorite(book.id) ? '❤️' : '♡'}
                         </button>
                     </div>
                 </div>
@@ -349,57 +561,140 @@ function renderCheckoutPage() {
     
     mainContent.innerHTML = `
         <div class="container">
-            <div class="checkout-container">
-                <h1>Shopping Cart</h1>
-                ${cart.length > 0 ? `
-                    <div class="cart-items">
-                        ${cart.map(item => `
-                            <div class="cart-item">
-                                <div class="cart-item-image">${item.title}</div>
-                                <div class="cart-item-info">
-                                    <h3>${item.title}</h3>
-                                    <p>by ${item.author}</p>
-                                    <p class="price">$${item.price}</p>
-                                    <div class="cart-item-controls">
-                                        <button onclick="updateCartQuantity(${item.id}, -1)">-</button>
-                                        <span>Quantity: ${item.quantity}</span>
-                                        <button onclick="updateCartQuantity(${item.id}, 1)">+</button>
-                                        <button class="btn btn-favorite" onclick="removeFromCart(${item.id})">Remove</button>
+            <h1>Checkout</h1>
+            
+            <div class="checkout-steps">
+                <div class="step active">Cart</div>
+                <div class="step">Payment</div>
+                <div class="step">Confirmation</div>
+            </div>
+            
+            ${cart.length > 0 ? `
+                <div class="checkout-layout">
+                    <div class="checkout-left">
+                        <div class="cart-section">
+                            <h2>Your Cart (${cart.length} item${cart.length !== 1 ? 's' : ''})</h2>
+                            <div class="cart-items">
+                                ${cart.map(item => `
+                                    <div class="cart-item">
+                                        <div class="cart-item-image">${item.title}</div>
+                                        <div class="cart-item-info">
+                                            <h3>${item.title}</h3>
+                                            <p>by ${item.author}</p>
+                                            <p class="price">$${item.price}</p>
+                                            <div class="cart-item-controls">
+                                                <button onclick="updateCartQuantity(${item.id}, -1)">-</button>
+                                                <span>${item.quantity}</span>
+                                                <button onclick="updateCartQuantity(${item.id}, 1)">+</button>
+                                                <button class="btn btn-remove" onclick="removeFromCart(${item.id})">Remove</button>
+                                            </div>
+                                        </div>
+                                        <div class="cart-item-total">
+                                            <strong>$${(parseFloat(item.price) * item.quantity).toFixed(2)}</strong>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="payment-section" id="paymentSection">
+                            <h2>Payment Details</h2>
+                            <form id="paymentForm">
+                                <div class="form-group">
+                                    <label for="cardName">Cardholder Name</label>
+                                    <input type="text" id="cardName" required placeholder="John Doe">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" id="cardNumber" required placeholder="1234 5678 9012 3456" maxlength="19">
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiry">Expiry Date</label>
+                                        <input type="text" id="expiry" required placeholder="MM/YY" maxlength="5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" required placeholder="123" maxlength="3">
                                     </div>
                                 </div>
-                                <div>
-                                    <strong>$${(parseFloat(item.price) * item.quantity).toFixed(2)}</strong>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout-right">
+                        <div class="order-summary">
+                            <h2>Order Summary</h2>
+                            <div class="summary-details">
+                                <div class="summary-row">
+                                    <span>Subtotal:</span>
+                                    <span>$${subtotal.toFixed(2)}</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Shipping:</span>
+                                    <span>Free</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Tax (8%):</span>
+                                    <span>$${tax.toFixed(2)}</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span>Total:</span>
+                                    <span>$${total.toFixed(2)}</span>
                                 </div>
                             </div>
-                        `).join('')}
-                    </div>
-                    
-                    <div class="checkout-summary">
-                        <div class="summary-row">
-                            <span>Subtotal:</span>
-                            <span>$${subtotal.toFixed(2)}</span>
-                        </div>
-                        <div class="summary-row">
-                            <span>Tax (8%):</span>
-                            <span>$${tax.toFixed(2)}</span>
-                        </div>
-                        <div class="summary-row total">
-                            <span>Total:</span>
-                            <span>$${total.toFixed(2)}</span>
+                            
+                            <button class="btn btn-primary btn-block" onclick="completePayment()">Complete Purchase</button>
+                            <button class="btn btn-block" onclick="window.location.hash='#/'">Continue Shopping</button>
                         </div>
                     </div>
-                    
-                    <div class="checkout-actions">
-                        <button class="btn btn-primary" onclick="processPayment()">Proceed to Payment</button>
-                        <button class="btn" onclick="window.location.hash='#/'">Continue Shopping</button>
+                </div>
+            ` : `
+                <div class="empty-state">
+                    <h2>Your cart is empty</h2>
+                    <p>Add some books to get started!</p>
+                    <button class="btn btn-primary" onclick="window.location.hash='#/'">Browse Books</button>
+                </div>
+            `}
+        </div>
+    `;
+    
+    // Initialize card input formatting
+    initializeCardInputs();
+}
+
+function renderConfirmationPage() {
+    const orderNumber = Math.floor(100000 + Math.random() * 900000);
+    
+    const mainContent = document.getElementById('mainContent');
+    mainContent.innerHTML = `
+        <div class="container">
+            <div class="confirmation-page">
+                <div class="confirmation-icon">✓</div>
+                <h1>Payment Successful!</h1>
+                <p>Thank you for your purchase. Your order has been confirmed.</p>
+                
+                <div class="order-details">
+                    <div class="detail-row">
+                        <span>Order Number:</span>
+                        <strong>#${orderNumber}</strong>
                     </div>
-                ` : `
-                    <div class="empty-state">
-                        <h2>Your cart is empty</h2>
-                        <p>Add some books to get started!</p>
-                        <button class="btn btn-primary" onclick="window.location.hash='#/'">Browse Books</button>
+                    <div class="detail-row">
+                        <span>Date:</span>
+                        <span>${new Date().toLocaleDateString()}</span>
                     </div>
-                `}
+                    <div class="detail-row">
+                        <span>Email:</span>
+                        <span>${currentUser.email}</span>
+                    </div>
+                </div>
+                
+                <div class="confirmation-actions">
+                    <button class="btn btn-primary" onclick="window.location.hash='#/'">Continue Shopping</button>
+                    <button class="btn" onclick="window.print()">Print Receipt</button>
+                </div>
             </div>
         </div>
     `;
@@ -409,23 +704,21 @@ function renderCarousel() {
     const carousel = document.getElementById('bookCarousel');
     if (!carousel) return;
     
-    const carouselBooks = booksData.slice(0, 110); // Show all 110 books
-    const itemWidth = 200; // Fixed width for each carousel item
-    const totalWidth = carouselBooks.length * itemWidth * 2; // *2 for duplication
+    const carouselBooks = booksData.slice(0, Math.min(50, booksData.length));
+    const itemWidth = 200;
+    const totalWidth = carouselBooks.length * itemWidth * 2;
     
-    // Duplicate items for infinite scroll effect
     const duplicatedBooks = [...carouselBooks, ...carouselBooks];
     
     carousel.innerHTML = duplicatedBooks.map((book, index) => `
         <div class="carousel-item" onclick="window.location.hash='#/book/${book.id}'" style="width: ${itemWidth}px;">
-            ${book.title}
+            <div class="carousel-title">${book.title}</div>
+            <div class="carousel-author">by ${book.author}</div>
         </div>
     `).join('');
     
-    // Set total width for the carousel
     carousel.style.width = `${totalWidth}px`;
     
-    // Start auto-scroll animation
     startCarouselAnimation(carousel, itemWidth);
 }
 
@@ -435,13 +728,12 @@ function startCarouselAnimation(carousel, itemWidth) {
     }
     
     let position = 0;
-    const speed = 0.5; // pixels per frame
+    const speed = 0.5;
     
     function animate() {
         position -= speed;
         
-        // Reset position when we've scrolled through all items
-        if (Math.abs(position) >= itemWidth * (booksData.length)) {
+        if (Math.abs(position) >= itemWidth * (booksData.slice(0, 50).length)) {
             position = 0;
         }
         
@@ -468,7 +760,7 @@ function createBookCard(book) {
                 <div class="book-actions" onclick="event.stopPropagation()">
                     <button class="btn btn-primary" onclick="addToCart(${book.id})">Add to Cart</button>
                     <button class="btn btn-favorite ${isFavorite(book.id) ? 'active' : ''}" onclick="toggleFavorite(${book.id})">
-                        ${isFavorite(book.id) ? '❤️' : '🤍'}
+                        ${isFavorite(book.id) ? '❤️' : '♡'}
                     </button>
                 </div>
             </div>
@@ -477,8 +769,9 @@ function createBookCard(book) {
 }
 
 function renderStars(rating) {
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 >= 0.5;
+    const numRating = parseFloat(rating);
+    const fullStars = Math.floor(numRating);
+    const hasHalfStar = numRating % 1 >= 0.5;
     let stars = '';
     
     for (let i = 0; i < fullStars; i++) {
@@ -501,21 +794,40 @@ function getGenreIcon(genre) {
         'Non-Fiction': '📚',
         'Science Fiction': '🚀',
         'Mystery & Thriller': '🔍',
-        'Mystery &amp; Thriller': '🔍',
         'Romance': '💕',
         'Biography': '👤',
         'Fantasy': '🧙',
         'History': '⏳',
-        'Classic Literature': '📜'
+        'Classic Literature': '📜',
+        'General': '📕'
     };
-    return icons[genre] || '📕';
+    
+    // Check for exact match first
+    if (icons[genre]) {
+        return icons[genre];
+    }
+    
+    // Check for partial matches
+    if (genre.includes('Children')) return '👶';
+    if (genre.includes('Fiction')) return '📖';
+    if (genre.includes('Non-Fiction')) return '📚';
+    if (genre.includes('Science') || genre.includes('Sci-Fi')) return '🚀';
+    if (genre.includes('Mystery') || genre.includes('Thriller')) return '🔍';
+    if (genre.includes('Romance')) return '💕';
+    if (genre.includes('Biography') || genre.includes('Memoir')) return '👤';
+    if (genre.includes('Fantasy')) return '🧙';
+    if (genre.includes('History')) return '⏳';
+    if (genre.includes('Classic')) return '📜';
+    
+    return '📕';
 }
 
 function calculateAverageRating(book, userRating) {
+    const bookRating = parseFloat(book.rating) || 3.0;
     if (userRating > 0) {
-        return ((parseFloat(book.rating) + userRating) / 2).toFixed(1);
+        return ((bookRating + userRating) / 2).toFixed(1);
     }
-    return book.rating;
+    return bookRating.toFixed(1);
 }
 
 // ============= CART FUNCTIONS =============
@@ -526,6 +838,11 @@ function addToCart(bookId) {
     }
     
     const book = booksData.find(b => b.id === bookId);
+    if (!book) {
+        alert('Book not found!');
+        return;
+    }
+    
     const quantityInput = document.getElementById('quantity');
     const quantity = quantityInput ? parseInt(quantityInput.value) : 1;
     
@@ -580,43 +897,50 @@ function changeQuantity(change) {
         if (value < 1) value = 1;
         if (value > parseInt(input.max)) value = parseInt(input.max);
         input.value = value;
+        currentQuantity = value;
     }
 }
 
-function processPayment() {
-    showPaymentModal();
-}
-
-function showPaymentModal() {
-    document.getElementById('paymentModal').style.display = 'block';
-}
-
-function hidePaymentModal() {
-    document.getElementById('paymentModal').style.display = 'none';
-}
-
-function showSuccessModal() {
-    const orderNumber = Math.floor(100000 + Math.random() * 900000);
-    document.getElementById('orderNumber').textContent = orderNumber;
-    document.getElementById('successModal').style.display = 'block';
-}
-
-function hideSuccessModal() {
-    document.getElementById('successModal').style.display = 'none';
-}
-
-function returnToHome() {
-    hideSuccessModal();
-    window.location.hash = '#/';
-}
-
-function completePayment(e) {
-    e.preventDefault();
+function initializeCardInputs() {
+    const cardNumber = document.getElementById('cardNumber');
+    const expiry = document.getElementById('expiry');
+    const cvv = document.getElementById('cvv');
     
-    // Validate card number format
-    const cardNumber = document.getElementById('cardNumber').value;
-    const expiry = document.getElementById('expiry').value;
-    const cvv = document.getElementById('cvv').value;
+    if (cardNumber) {
+        cardNumber.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\s/g, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+            e.target.value = formattedValue;
+        });
+    }
+    
+    if (expiry) {
+        expiry.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.slice(0, 2) + '/' + value.slice(2, 4);
+            }
+            e.target.value = value;
+        });
+    }
+    
+    if (cvv) {
+        cvv.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+    }
+}
+
+function completePayment() {
+    const cardNumber = document.getElementById('cardNumber')?.value;
+    const expiry = document.getElementById('expiry')?.value;
+    const cvv = document.getElementById('cvv')?.value;
+    const cardName = document.getElementById('cardName')?.value;
+    
+    if (!cardName || !cardNumber || !expiry || !cvv) {
+        alert('Please fill in all payment details');
+        return;
+    }
     
     if (cardNumber.replace(/\s/g, '').length < 13) {
         alert('Please enter a valid card number');
@@ -633,16 +957,13 @@ function completePayment(e) {
         return;
     }
     
-    // Clear cart and show success
+    // Process payment
     cart = [];
     saveToLocalStorage();
     updateCartCount();
     
-    hidePaymentModal();
-    showSuccessModal();
-    
-    // Reset form
-    document.getElementById('paymentForm').reset();
+    // Show confirmation page
+    renderConfirmationPage();
 }
 
 // ============= FAVORITES FUNCTIONS =============
@@ -659,7 +980,24 @@ function toggleFavorite(bookId) {
     }
     
     saveToLocalStorage();
-    renderCurrentPage();
+    
+    if (window.location.hash === '#/favorites') {
+        renderCurrentPage();
+    } else {
+        // Update all favorite buttons on the page
+        const buttons = document.querySelectorAll('.btn-favorite');
+        buttons.forEach(button => {
+            const onclick = button.getAttribute('onclick');
+            if (onclick && onclick.includes('toggleFavorite')) {
+                const match = onclick.match(/toggleFavorite\((\d+)\)/);
+                if (match) {
+                    const id = parseInt(match[1]);
+                    button.classList.toggle('active', isFavorite(id));
+                    button.innerHTML = isFavorite(id) ? '❤️' : '♡';
+                }
+            }
+        });
+    }
 }
 
 function isFavorite(bookId) {
@@ -685,7 +1023,8 @@ function performSearch() {
     
     const results = booksData.filter(book => 
         book.title.toLowerCase().includes(query) || 
-        book.author.toLowerCase().includes(query)
+        book.author.toLowerCase().includes(query) ||
+        book.genre.toLowerCase().includes(query)
     );
     
     const mainContent = document.getElementById('mainContent');
@@ -708,8 +1047,9 @@ function performSearch() {
 
 function applySorting(genre) {
     const decodedGenre = decodeURIComponent(genre);
+    const normalizedGenre = decodeHTMLEntities(decodedGenre);
     const sortValue = document.getElementById('sortSelect').value;
-    let genreBooks = booksData.filter(book => book.genre === decodedGenre);
+    let genreBooks = booksData.filter(book => book.genre === normalizedGenre);
     
     switch(sortValue) {
         case 'title':
@@ -751,21 +1091,150 @@ function updateThemeIcon() {
     themeIcon.textContent = isDark ? '☀️' : '🌙';
 }
 
-// ============= AUTHENTICATION =============
-function showLoginModal() {
-    document.getElementById('loginModal').style.display = 'block';
+// ============= AUTHENTICATION FUNCTIONS =============
+function hashPassword(password) {
+    // Simple hash function for demo (use bcrypt in production)
+    let hash = 0;
+    for (let i = 0; i < password.length; i++) {
+        const char = password.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+    }
+    return hash.toString();
 }
 
-function hideLoginModal() {
-    document.getElementById('loginModal').style.display = 'none';
+function validateUser(email, password) {
+    const hashedPassword = hashPassword(password);
+    return usersData.find(user => 
+        user.email === email && user.password === hashedPassword
+    );
+}
+
+function userExists(email) {
+    return usersData.some(user => user.email === email);
+}
+
+function showLoginModal() {
+    document.getElementById('authModal').style.display = 'block';
+    switchToLogin();
+}
+
+function hideAuthModal() {
+    document.getElementById('authModal').style.display = 'none';
+    clearAuthForms();
+}
+
+function switchToLogin() {
+    document.getElementById('loginForm').style.display = 'block';
+    document.getElementById('signupForm').style.display = 'none';
+    document.getElementById('resetForm').style.display = 'none';
+    document.querySelector('.auth-title').textContent = 'Login to Bookify';
+    clearAuthForms();
+}
+
+function switchToSignup() {
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('signupForm').style.display = 'block';
+    document.getElementById('resetForm').style.display = 'none';
+    document.querySelector('.auth-title').textContent = 'Create Account';
+    clearAuthForms();
+}
+
+function switchToReset() {
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('signupForm').style.display = 'none';
+    document.getElementById('resetForm').style.display = 'block';
+    document.querySelector('.auth-title').textContent = 'Reset Password';
+    clearAuthForms();
+}
+
+function clearAuthForms() {
+    document.getElementById('email').value = '';
+    document.getElementById('password').value = '';
+    document.getElementById('confirmPassword').value = '';
+    document.getElementById('signupEmail').value = '';
+    document.getElementById('signupPassword').value = '';
+    document.getElementById('resetEmail').value = '';
+}
+
+function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    if (!email || !password) {
+        alert('Please fill in all fields');
+        return;
+    }
+    
+    const user = validateUser(email, password);
+    if (user) {
+        currentUser = { email: email };
+        saveToLocalStorage();
+        updateLoginStatus();
+        hideAuthModal();
+        alert('Login successful!');
+    } else {
+        alert('Invalid email or password');
+    }
+}
+
+function handleSignup(e) {
+    e.preventDefault();
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    
+    if (!email || !password || !confirmPassword) {
+        alert('Please fill in all fields');
+        return;
+    }
+    
+    if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+    }
+    
+    if (password.length < 6) {
+        alert('Password must be at least 6 characters long');
+        return;
+    }
+    
+    if (userExists(email)) {
+        alert('Email already registered');
+        return;
+    }
+    
+    // For demo, we'll just add to the local array
+    // In a real app, this would save to the XML file via a backend
+    usersData.push({ email, password: hashPassword(password) });
+    alert('Account created successfully! Please login.');
+    switchToLogin();
+}
+
+function handleResetPassword(e) {
+    e.preventDefault();
+    const email = document.getElementById('resetEmail').value;
+    
+    if (!email) {
+        alert('Please enter your email');
+        return;
+    }
+    
+    if (!userExists(email)) {
+        alert('Email not found');
+        return;
+    }
+    
+    alert('Password reset link has been sent to your email (demo)');
+    switchToLogin();
 }
 
 function login(email, password) {
-    // Mock authentication - accept any email/password
     currentUser = { email: email };
     saveToLocalStorage();
     updateLoginStatus();
-    hideLoginModal();
+    hideAuthModal();
     alert('Login successful!');
 }
 
@@ -816,77 +1285,94 @@ function loadFromLocalStorage() {
 
 // ============= EVENT LISTENERS =============
 function initializeEventListeners() {
-    // Theme toggle
-    document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+    // Theme toggle - wait for element to exist
+    setTimeout(() => {
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+    }, 100);
     
-    // Login modal
-    document.getElementById('loginBtn').addEventListener('click', showLoginModal);
-    document.getElementById('logoutBtn').addEventListener('click', logout);
-    
-    document.querySelector('.close').addEventListener('click', hideLoginModal);
-    
-    document.getElementById('loginForm').addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        login(email, password);
+    // Auth buttons using event delegation
+    document.addEventListener('click', (e) => {
+        if (e.target.id === 'loginBtn') {
+            showLoginModal();
+        }
+        if (e.target.id === 'logoutBtn') {
+            logout();
+        }
+        if (e.target.id === 'closeAuth') {
+            hideAuthModal();
+        }
+        if (e.target.id === 'searchBtn') {
+            performSearch();
+        }
+        if (e.target.id === 'cartIcon') {
+            window.location.hash = '#/cart';
+        }
     });
     
-    // Payment modal
-    document.getElementById('closePayment').addEventListener('click', hidePaymentModal);
-    document.getElementById('paymentForm').addEventListener('submit', completePayment);
+    // Search input
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') performSearch();
+        });
+    }
+    
+    // Auth forms
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', handleLogin);
+    }
+    
+    const signupForm = document.getElementById('signupForm');
+    if (signupForm) {
+        signupForm.addEventListener('submit', handleSignup);
+    }
+    
+    const resetForm = document.getElementById('resetForm');
+    if (resetForm) {
+        resetForm.addEventListener('submit', handleResetPassword);
+    }
+    
+    // Switch auth forms
+    document.addEventListener('click', (e) => {
+        if (e.target.id === 'switchToSignup') {
+            e.preventDefault();
+            switchToSignup();
+        }
+        if (e.target.id === 'switchToLogin') {
+            e.preventDefault();
+            switchToLogin();
+        }
+        if (e.target.id === 'switchToReset') {
+            e.preventDefault();
+            switchToReset();
+        }
+        if (e.target.id === 'switchToLoginFromReset') {
+            e.preventDefault();
+            switchToLogin();
+        }
+        if (e.target.id === 'switchToLoginFromSignup') {
+            e.preventDefault();
+            switchToLogin();
+        }
+    });
     
     // Close modal on outside click
     window.addEventListener('click', (e) => {
-        const loginModal = document.getElementById('loginModal');
-        const paymentModal = document.getElementById('paymentModal');
-        const successModal = document.getElementById('successModal');
-        
-        if (e.target === loginModal) {
-            hideLoginModal();
+        const authModal = document.getElementById('authModal');
+        if (e.target === authModal) {
+            hideAuthModal();
         }
-        if (e.target === paymentModal) {
-            hidePaymentModal();
-        }
-        if (e.target === successModal) {
-            hideSuccessModal();
-        }
-    });
-    
-    // Card number formatting
-    document.addEventListener('input', (e) => {
-        if (e.target.id === 'cardNumber') {
-            let value = e.target.value.replace(/\s/g, '');
-            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
-            e.target.value = formattedValue;
-        }
-        
-        if (e.target.id === 'expiry') {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length >= 2) {
-                value = value.slice(0, 2) + '/' + value.slice(2, 4);
-            }
-            e.target.value = value;
-        }
-        
-        if (e.target.id === 'cvv') {
-            e.target.value = e.target.value.replace(/\D/g, '');
-        }
-    });
-    
-    // Search
-    document.getElementById('searchBtn').addEventListener('click', performSearch);
-    document.getElementById('searchInput').addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') performSearch();
-    });
-    
-    // Cart icon
-    document.getElementById('cartIcon').addEventListener('click', () => {
-        window.location.hash = '#/cart';
     });
 }
 
 // ============= UTILITIES =============
 function showLoading(show) {
-    document.getElementById('loadingSpinner').style.display = show ? 'flex' : 'none';
+    const spinner = document.getElementById('loadingSpinner');
+    if (spinner) {
+        spinner.style.display = show ? 'flex' : 'none';
+    }
 }

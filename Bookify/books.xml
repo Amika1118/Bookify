@@ -1,0 +1,1126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+    <book id="1">
+        <title>Where the Wild Things Are</title>
+        <author>Maurice Sendak</author>
+        <genre>Children's Books</genre>
+        <price>18.95</price>
+        <rating>4.9</rating>
+        <description>"Where the Wild Things Are" is a timeless children's picture book that follows the imaginative journey of a young boy named Max. Dressed in his wolf suit, Max causes mischief at home and is sent to bed without supper. In his anger, his bedroom transforms into a forest, and he sails across an ocean to the land of the Wild Things—fierce, roaring monsters with sharp claws and yellow eyes. Max tames them with a magic trick, becoming their king and leading a wild rumpus of dancing and howling. However, loneliness sets in, and Max decides to return home, where he finds his hot supper waiting. This story beautifully explores themes of childhood emotions, imagination, and the comfort of family, with Sendak's iconic illustrations bringing the adventure to life. It has captivated generations since its 1963 publication, winning the Caldecott Medal and inspiring adaptations like films and operas.</description>
+        <image>where-the-wild-things-are.jpg</image>
+        <stock>120</stock>
+    </book>
+    <book id="2">
+        <title>The Very Hungry Caterpillar</title>
+        <author>Eric Carle</author>
+        <genre>Children's Books</genre>
+        <price>10.99</price>
+        <rating>4.9</rating>
+        <description>"The Very Hungry Caterpillar" is a classic children's book that chronicles the life cycle of a caterpillar in a fun, interactive way. Starting as a tiny egg on a leaf, the caterpillar hatches on Sunday and begins his voracious eating spree, munching through one apple on Monday, two pears on Tuesday, and so on, up to five oranges on Friday. Despite his healthy fruit diet, he indulges in junk food on Saturday—like chocolate cake, ice cream, and sausage—leading to a stomachache. The next day, he eats a green leaf and feels better, then spins a cocoon and emerges as a beautiful butterfly. Carle's vibrant collage illustrations and die-cut pages make counting, days of the week, and healthy eating engaging for young readers. Published in 1969, it has sold over 50 million copies worldwide, teaching biology basics while delighting with its simple, rhythmic text.</description>
+        <image>hungry-caterpillar.jpg</image>
+        <stock>200</stock>
+    </book>
+    <book id="3">
+        <title>Charlotte's Web</title>
+        <author>E.B. White</author>
+        <genre>Children's Books</genre>
+        <price>14.99</price>
+        <rating>4.8</rating>
+        <description>"Charlotte's Web" is a heartwarming children's novel about friendship, life, and death on a farm. Wilbur, a runt pig saved from slaughter by young Fern Arable, grows up in the barn where he befriends Charlotte, a wise gray spider. When Wilbur learns he's destined for the smokehouse, Charlotte weaves miraculous messages in her web—like "Some Pig," "Terrific," and "Radiant"—to convince farmer Zuckerman that Wilbur is extraordinary, turning him into a local celebrity and saving his life. Along the way, Wilbur meets other barnyard animals, including the gluttonous rat Templeton. The story culminates at the county fair, where Charlotte's final web "Humble" wins Wilbur a prize, but Charlotte dies after laying her eggs. Wilbur cares for her offspring, learning about loss and renewal. White's gentle prose and Garth Williams' illustrations make this 1952 book a staple, exploring profound themes with humor and tenderness.</description>
+        <image>charlottes-web.jpg</image>
+        <stock>85</stock>
+    </book>
+    <book id="4">
+        <title>Goodnight Moon</title>
+        <author>Margaret Wise Brown</author>
+        <genre>Children's Books</genre>
+        <price>8.99</price>
+        <rating>4.8</rating>
+        <description>"Goodnight Moon" is a soothing bedtime classic for toddlers, featuring a little bunny saying goodnight to everything in his great green room. The rhythmic text bids farewell to items like the red balloon, two little kittens, a pair of mittens, a comb and brush, and even "nobody," while also whispering goodnight to the old lady quietly saying "hush." Clement Hurd's illustrations alternate between colorful depictions of the room and black-and-white views of the surrounding world, creating a calming progression as the room darkens and the bunny drifts to sleep. Published in 1947, this simple yet poetic book helps establish bedtime routines, fostering a sense of security and wonder. Its enduring popularity stems from the gentle repetition and detailed artwork that invites young children to notice new elements each reading, making it a beloved ritual in households worldwide for generations.</description>
+        <image>goodnight-moon.jpg</image>
+        <stock>150</stock>
+    </book>
+    <book id="5">
+        <title>The Giving Tree</title>
+        <author>Shel Silverstein</author>
+        <genre>Children's Books</genre>
+        <price>15.00</price>
+        <rating>4.7</rating>
+        <description>"The Giving Tree" is a poignant children's parable about selfless love and the relationship between a boy and an apple tree. The tree happily provides for the boy throughout his life: apples to eat and sell in childhood, branches for a house in adulthood, trunk for a boat in middle age, and finally a stump to sit on in old age. Each time, the tree gives joyfully, even as she's left diminished, declaring "And the tree was happy." Silverstein's minimalist line drawings and straightforward text belie deeper themes of generosity, exploitation, environmentalism, and the parent-child bond. Published in 1964, it has sparked debate—some see it as a beautiful tale of unconditional love, others as a cautionary story of one-sided relationships. Regardless, its emotional impact resonates, teaching lessons on giving, taking, and contentment in simplicity, and remains a staple in children's literature with millions of copies sold.</description>
+        <image>giving-tree.jpg</image>
+        <stock>95</stock>
+    </book>
+
+    <book id="6">
+        <title>The Seven Husbands of Evelyn Hugo</title>
+        <author>Taylor Jenkins Reid</author>
+        <genre>Fiction</genre>
+        <price>17.00</price>
+        <rating>4.7</rating>
+        <description>"The Seven Husbands of Evelyn Hugo" is a captivating novel that delves into the glamorous yet tumultuous life of a fictional Hollywood icon. Aging reclusive star Evelyn Hugo selects unknown journalist Monique Grant to write her biography, revealing scandalous truths about her seven marriages, rise to fame in the 1950s, and hidden love affair with actress Celia St. James. Through flashbacks, readers uncover Evelyn's ambitions, sacrifices for stardom, battles with racism and homophobia, and the cost of her carefully crafted image. Reid's narrative weaves Old Hollywood intrigue with themes of identity, love, and legacy, drawing parallels to real legends like Elizabeth Taylor. Published in 2017, the book explores bisexuality and feminism, culminating in a twist connecting Evelyn and Monique. Its vivid storytelling and emotional depth have made it a bestseller, praised for representation and inspiring a Netflix adaptation.</description>
+        <image>evelyn-hugo.jpg</image>
+        <stock>42</stock>
+    </book>
+    <book id="7">
+        <title>The Midnight Library</title>
+        <author>Matt Haig</author>
+        <genre>Fiction</genre>
+        <price>16.99</price>
+        <rating>4.6</rating>
+        <description>"The Midnight Library" is a philosophical novel exploring regret, choices, and alternate lives. Nora Seed, overwhelmed by loneliness and failures, attempts suicide and awakens in a mystical library between life and death, guided by her school librarian Mrs. Elm. Each book represents a parallel life based on different decisions—like becoming an Olympic swimmer, rock star, or glaciologist—allowing Nora to experience "what ifs" and undo regrets. As she navigates joys and sorrows in these realities, she learns that no life is perfect and happiness comes from appreciating the present. Haig blends fantasy with mental health themes, drawing from quantum physics and self-help, in this 2020 bestseller. Its uplifting message about resilience and possibility resonates, especially post-pandemic, with poignant prose that encourages readers to embrace their own "root life" amid infinite possibilities.</description>
+        <image>midnight-library.jpg</image>
+        <stock>65</stock>
+    </book>
+    <book id="8">
+        <title>Where the Crawdads Sing</title>
+        <author>Delia Owens</author>
+        <genre>Fiction</genre>
+        <price>18.00</price>
+        <rating>4.8</rating>
+        <description>"Where the Crawdads Sing" is a mesmerizing coming-of-age mystery set in the marshes of North Carolina. Abandoned by her family, young Kya Clark, known as the "Marsh Girl," survives alone, learning from nature's rhythms and befriending seagulls and fireflies. As she grows, she experiences first love with kind Tate Walker, who teaches her to read, but faces betrayal from town golden boy Chase Andrews. When Chase is found dead in 1969, Kya becomes the prime suspect in a murder trial that exposes small-town prejudices. Owens, a zoologist, infuses the narrative with vivid ecological details, blending romance, survival, and courtroom drama. Published in 2018, it explores isolation, resilience, and human connection, becoming a phenomenon with over 18 million copies sold and a film adaptation, praised for its lyrical prose and twist ending.</description>
+        <image>crawdads-sing.jpg</image>
+        <stock>110</stock>
+    </book>
+    <book id="9">
+        <title>Lessons in Chemistry</title>
+        <author>Bonnie Garmus</author>
+        <genre>Fiction</genre>
+        <price>21.99</price>
+        <rating>4.7</rating>
+        <description>"Lessons in Chemistry" is a witty feminist novel set in the 1960s, following brilliant chemist Elizabeth Zott. Fired from her lab for being an unwed mother after her partner's death, Elizabeth lands a job hosting a TV cooking show, "Supper at Six," where she treats cooking as science, empowering housewives with chemistry lessons and messages of self-worth. Amid sexism, she raises her precocious daughter Mad and bonds with a quirky dog named Six-Thirty. Garmus weaves humor, tragedy, and social commentary on gender roles, drawing from real historical biases in science. Published in 2022, the book highlights Elizabeth's determination and intellect, with recipes like "Abiogenesis Brownies" adding charm. Its empowering narrative has made it a bestseller, adapted into an Apple TV+ series, resonating with readers on themes of ambition, grief, and breaking barriers.</description>
+        <image>lessons-chemistry.jpg</image>
+        <stock>31</stock>
+    </book>
+    <book id="10">
+        <title>Tomorrow, and Tomorrow, and Tomorrow</title>
+        <author>Gabrielle Zevin</author>
+        <genre>Fiction</genre>
+        <price>20.50</price>
+        <rating>4.5</rating>
+        <description>"Tomorrow, and Tomorrow, and Tomorrow" is an epic tale of friendship, creativity, and the video game industry spanning three decades. Childhood friends Sam Masur and Sadie Green reunite in college and collaborate on blockbuster games like "Ichigo," inspired by their personal struggles—Sam's orphanhood and disability, Sadie's sexism battles. Their partnership with producer Marx Watanabe builds an empire, but jealousy, tragedy, and miscommunication strain bonds. Zevin draws from real gaming history, exploring virtual worlds as metaphors for life, love, and loss. Published in 2022, it delves into identity, Asian-American experiences, and art's healing power, with interactive elements like game descriptions. Praised for emotional depth and cultural insights, it's a New York Times bestseller, appealing to gamers and non-gamers alike with its poignant look at how we play, create, and connect.</description>
+        <image>tomorrow-tomorrow.jpg</image>
+        <stock>37</stock>
+    </book>
+
+    <book id="11">
+        <title>Educated</title>
+        <author>Tara Westover</author>
+        <genre>Non-Fiction</genre>
+        <price>18.99</price>
+        <rating>4.8</rating>
+        <description>"Educated" is a gripping memoir of Tara Westover's escape from a strict, abusive survivalist family in rural Idaho to pursue formal education. Raised without school, medical care, or birth certificate by her bipolar father who hoarded for the apocalypse and her herbalist mother, Tara endured physical abuse from a brother and grueling scrapyard work. Self-taught, she aced the ACT at 16, entering Brigham Young University, then Cambridge and Harvard, earning a PhD in history. Westover grapples with loyalty, identity, and the cost of knowledge, confronting family denial of her experiences. Published in 2018, it highlights education's transformative power amid fundamentalism and mental illness. A bestseller with over 8 million copies sold, it's praised for raw honesty and lyrical prose, inspiring discussions on resilience, family dynamics, and self-reinvention.</description>
+        <image>educated.jpg</image>
+        <stock>72</stock>
+    </book>
+    <book id="12">
+        <title>Sapiens: A Brief History of Humankind</title>
+        <author>Yuval Noah Harari</author>
+        <genre>Non-Fiction</genre>
+        <price>22.99</price>
+        <rating>4.7</rating>
+        <description>"Sapiens: A Brief History of Humankind" traces Homo sapiens' evolution from insignificant apes to world dominators over 70,000 years. Harari divides history into Cognitive, Agricultural, and Scientific Revolutions, explaining how myths, money, and empires enabled cooperation on massive scales. He explores agriculture's "luxury trap," capitalism's rise, imperialism's impacts, and future biotech threats. Blending anthropology, biology, and economics, the 2011 book (English 2014) challenges assumptions about progress, happiness, and human nature, arguing we're wired for fictions like religion and nations. Harari's accessible, provocative style makes complex ideas engaging, with illustrations aiding comprehension. A global phenomenon with 25 million copies sold, it's influenced thinkers like Bill Gates, sparking debates on inequality, animal rights, and our species' responsibility in shaping the planet's fate.</description>
+        <image>sapiens.jpg</image>
+        <stock>90</stock>
+    </book>
+    <book id="13">
+        <title>The Immortal Life of Henrietta Lacks</title>
+        <author>Rebecca Skloot</author>
+        <genre>Non-Fiction</genre>
+        <price>16.00</price>
+        <rating>4.8</rating>
+        <description>"The Immortal Life of Henrietta Lacks" uncovers the story behind HeLa cells, taken from African-American woman Henrietta Lacks during her 1951 cervical cancer treatment at Johns Hopkins without consent. These "immortal" cells revolutionized medicine, aiding polio vaccine, gene mapping, and cancer research, generating billions while her family remained poor and uninformed. Skloot interweaves science, ethics, and family history, detailing the Lackses' struggles with racism, poverty, and exploitation. Published in 2010, it explores bioethics, informed consent, and racial disparities in healthcare. Through interviews and archives, Skloot humanizes Henrietta, portraying her as a vibrant tobacco farmer and mother. A bestseller adapted into an HBO film with Oprah Winfrey, it's required reading in schools, prompting policy changes like NIH agreements for HeLa genome use and raising awareness of medical injustices.</description>
+        <image>henrietta-lacks.jpg</image>
+        <stock>45</stock>
+    </book>
+    <book id="14">
+        <title>The Body Keeps the Score</title>
+        <author>Bessel van der Kolk</author>
+        <genre>Non-Fiction</genre>
+        <price>19.00</price>
+        <rating>4.8</rating>
+        <description>"The Body Keeps the Score" is a groundbreaking exploration of trauma's profound effects on mind and body, drawing from psychiatrist Bessel van der Kolk's 30+ years of research. He explains how experiences like abuse, war, or accidents alter brain wiring, leading to PTSD, dissociation, and physical ailments, often misdiagnosed. Advocating beyond talk therapy, van der Kolk promotes innovative treatments like yoga, neurofeedback, EMDR, and theater to rewire responses and restore safety. Published in 2014, it integrates neuroscience, case studies, and attachment theory, emphasizing trauma's societal costs in addiction and violence. A bestseller with millions sold, it's transformed mental health approaches, influencing therapists and survivors. Van der Kolk's compassionate voice empowers readers to understand and heal, highlighting resilience through body-mind integration and community support.</description>
+        <image>body-score.jpg</image>
+        <stock>60</stock>
+    </book>
+    <book id="15">
+        <title>Quiet</title>
+        <author>Susan Cain</author>
+        <genre>Non-Fiction</genre>
+        <price>17.50</price>
+        <rating>4.7</rating>
+        <description>"Quiet: The Power of Introverts in a World That Can't Stop Talking" champions introversion in an extrovert-biased society. Susan Cain argues that one-third to half of people are introverts, thriving in quiet, reflective environments rather than constant stimulation. Drawing from psychology, neuroscience, and history, she profiles figures like Rosa Parks and Gandhi, showing how introverts drive innovation through deep thinking. Cain critiques "groupthink" in schools and workplaces, advocating for solitude-friendly designs. Published in 2012, it explores cultural differences—America's extrovert ideal vs. Asia's introspection—and offers tips for introverts, extroverts, and parents. A TED Talk phenomenon with 30 million views, the book has sold millions, sparking movements like Quiet Revolution to value sensitivity, creativity, and leadership in all temperaments, fostering better understanding in relationships and society.</description>
+        <image>quiet-cain.jpg</image>
+        <stock>36</stock>
+    </book>
+
+    <book id="16">
+        <title>Project Hail Mary</title>
+        <author>Andy Weir</author>
+        <genre>Science Fiction</genre>
+        <price>20.00</price>
+        <rating>4.9</rating>
+        <description>"Project Hail Mary" is a thrilling science fiction novel about lone astronaut Ryland Grace awakening from coma on a spaceship, amnesiac but tasked with saving humanity. Earth faces dimming sun from alien "Astrophage" microbes, threatening ice age. Grace, a former teacher turned scientist, must collaborate with rocky alien Eridian "Rocky" to solve the crisis, using physics, biology, and ingenuity. Weir's signature hard sci-fi style explains concepts like relativity and xenobiology through witty narration and flashbacks revealing Grace's backstory. Published in 2021, it explores isolation, friendship across species, and sacrifice, with humor lightening tense problem-solving. A bestseller adapted into a film with Ryan Gosling, it's praised for accessible science and emotional depth, inspiring STEM interest while pondering humanity's place in the universe.</description>
+        <image>project-hail-mary.jpg</image>
+        <stock>55</stock>
+    </book>
+    <book id="17">
+        <title>Dune</title>
+        <author>Frank Herbert</author>
+        <genre>Science Fiction</genre>
+        <price>18.00</price>
+        <rating>4.8</rating>
+        <description>"Dune" is an epic science fiction masterpiece set on desert planet Arrakis, source of the universe's most valuable resource: spice melange, which extends life and enables space travel. Young Paul Atreides, heir to House Atreides, survives betrayal by rivals House Harkonnen and Emperor, fleeing into dunes with mother Jessica. Among native Fremen, Paul embraces messianic destiny, mastering sandworm riding and prescient visions from spice. Herbert weaves ecology, politics, religion, and heroism, critiquing colonialism and environmentalism. Published in 1965, it won Hugo and Nebula awards, influencing Star Wars and climate fiction. With complex world-building—guild navigators, Bene Gesserit witches, ornithopters—it's a cornerstone of sci-fi, adapted into films like Denis Villeneuve's, exploring power's corruption and human evolution in a feudal interstellar empire.</description>
+        <image>dune.jpg</image>
+        <stock>110</stock>
+    </book>
+    <book id="18">
+        <title>Neuromancer</title>
+        <author>William Gibson</author>
+        <genre>Science Fiction</genre>
+        <price>15.99</price>
+        <rating>4.6</rating>
+        <description>"Neuromancer" is the seminal cyberpunk novel that coined "cyberspace," following hacker Case, down-and-out after nerve damage prevents matrix jacking. Recruited by enigmatic Armitage and razor-girl Molly for a heist against powerful Tessier-Ashpool clan, Case navigates virtual realities, AI intrigue, and orbital habitats. Gibson's 1984 debut blends noir with high-tech, exploring identity, addiction, and corporate dominance in a gritty future of data theft, implants, and simstim. Themes of human-AI fusion culminate in Wintermute's quest for transcendence. Winning Hugo, Nebula, and Philip K. Dick awards, it predicted internet culture, influencing Matrix and hacker lore. Dense prose paints neon Tokyo and space stations, critiquing capitalism and technology's dehumanizing effects, remaining relevant in our digital age. The book's innovative style and visionary concepts have made it a blueprint for cyberpunk, inspiring games, films, and discussions on virtual reality's societal impact.</description>
+        <image>neuromancer.jpg</image>
+        <stock>32</stock>
+    </book>
+    <book id="19">
+        <title>The Martian</title>
+        <author>Andy Weir</author>
+        <genre>Science Fiction</genre>
+        <price>16.50</price>
+        <rating>4.8</rating>
+        <description>"The Martian" is a gripping survival story of astronaut Mark Watney, stranded alone on Mars after a dust storm forces his crew to evacuate, presuming him dead. With ingenuity and humor, Watney "sciences the shit out of" problems—growing potatoes in Martian soil, hacking communications, and modifying rovers for a 3,200km trek. Interspersed with Earth-side NASA's frantic rescue efforts, the 2011 self-published novel (2014 mainstream) emphasizes problem-solving through real physics and chemistry. Weir's technical accuracy and Watney's witty logs make it thrilling yet educational, exploring isolation and human resilience. A bestseller adapted into a Ridley Scott film with Matt Damon, it's praised for optimism and STEM inspiration, showing how knowledge and determination can conquer even interplanetary odds. The book has sold millions, becoming a classroom tool for science education and highlighting international cooperation in space exploration.</description>
+        <image>martian.jpg</image>
+        <stock>37</stock>
+    </book>
+    <book id="20">
+        <title>Snow Crash</title>
+        <author>Neal Stephenson</author>
+        <genre>Science Fiction</genre>
+        <price>17.99</price>
+        <rating>4.5</rating>
+        <description>"Snow Crash" is a fast-paced cyberpunk satire set in a hyper-capitalist future America fragmented into franchised micro-states. Protagonist Hiro Protagonist, hacker and pizza deliverer for the Mafia, uncovers a plot involving "Snow Crash"—a drug/virus that crashes brains in reality and the Metaverse, a virtual reality internet. With skateboard courier Y.T., Hiro battles Sumerian neurolinguistics, ancient gods, and corporate raiders like Aleut harpooner Raven. Stephenson's 1992 novel coins "avatar" and predicts VR, memes, and gig economy, blending action, linguistics, and mythology. Themes critique religion, language as code, and technology's societal impact. A cult classic influencing Google Earth and Second Life, its witty, info-dense prose and vivid world—from sword fights to nuclear aircraft carriers—make it a cornerstone of speculative fiction.</description>
+        <image>snow-crash.jpg</image>
+        <stock>29</stock>
+    </book>
+
+    <book id="21">
+        <title>The Silent Patient</title>
+        <author>Alex Michaelides</author>
+        <genre>Mystery &amp; Thriller</genre>
+        <price>16.99</price>
+        <rating>4.6</rating>
+        <description>"The Silent Patient" is a psychological thriller about painter Alicia Berenson, who shoots her husband Gabriel five times and then never speaks again. Psychotherapist Theo Faber, obsessed with her case, takes a job at the Grove facility to treat her, unraveling her silence through her diary and interactions. As Theo digs, parallels emerge between their lives, leading to shocking revelations about infidelity, abuse, and identity. Michaelides' 2019 debut twists Greek tragedy with modern suspense, exploring mental health and unreliable narration. A bestseller with film rights sold, it's praised for its page-turning plot and surprise ending that redefines the story, keeping readers guessing until the final pages. The book draws from Alcestis myth, adding layers of art and psychology, making it a favorite for book clubs discussing trust and perception.</description>
+        <image>silent-patient.jpg</image>
+        <stock>65</stock>
+    </book>
+    <book id="22">
+        <title>Gone Girl</title>
+        <author>Gillian Flynn</author>
+        <genre>Mystery &amp; Thriller</genre>
+        <price>15.00</price>
+        <rating>4.5</rating>
+        <description>"Gone Girl" is a dark thriller alternating between Nick Dunne's present and wife Amy's diary, starting with Amy's disappearance on their fifth anniversary. Nick becomes suspect amid media frenzy, revealing their toxic marriage of lies, manipulation, and vengeance. Flynn's 2012 novel dissects gender roles, marriage myths, and media sensationalism through unreliable narrators and twists. Amy's "cool girl" monologue critiques societal expectations. A bestseller adapted into a David Fincher film with Ben Affleck and Rosamund Pike, it explores psychopathy and revenge, influencing "domestic noir" genre. Its sharp wit and shocking midpoint reversal make it addictive, prompting debates on feminism and morality in relationships. With 20 million copies sold, it's a cultural touchstone for discussions on true crime and psychological depth in fiction.</description>
+        <image>gone-girl.jpg</image>
+        <stock>48</stock>
+    </book>
+    <book id="23">
+        <title>The Girl with the Dragon Tattoo</title>
+        <author>Stieg Larsson</author>
+        <genre>Mystery &amp; Thriller</genre>
+        <price>18.99</price>
+        <rating>4.7</rating>
+        <description>"The Girl with the Dragon Tattoo" is the first in the Millennium series, featuring disgraced journalist Mikael Blomkvist and brilliant, tattooed hacker Lisbeth Salander. Hired by industrialist Henrik Vanger to solve the 40-year-old disappearance of his niece Harriet, Blomkvist uncovers dark family secrets on a remote island. Salander, with her own traumatic past, joins the investigation, using her skills to expose corruption, abuse, and Nazi ties. Larsson's 2005 novel (English 2008) blends mystery, thriller, and social commentary on violence against women and corporate greed. A global sensation with over 100 million copies sold, it's adapted into films, praising Salander's iconic character. The gripping plot, complex characters, and Swedish setting make it a modern classic in crime fiction, highlighting themes of justice and resilience.</description>
+        <image>dragon-tattoo.jpg</image>
+        <stock>35</stock>
+    </book>
+    <book id="24">
+        <title>Big Little Lies</title>
+        <author>Liane Moriarty</author>
+        <genre>Mystery &amp; Thriller</genre>
+        <price>16.50</price>
+        <rating>4.6</rating>
+        <description>"Big Little Lies" is a sharp domestic thriller set in an affluent Australian suburb, centering on three women: perfectionist Madeline, young single mom Jane, and beautiful Celeste. As their children start kindergarten, a school trivia night ends in murder, with the narrative flashing back to unravel secrets like bullying, abuse, and infidelity. Moriarty's 2014 novel explores motherhood, marriage, and friendship with wit and suspense, critiquing societal pressures. A bestseller adapted into an HBO series with Reese Witherspoon and Nicole Kidman, it's praised for relatable characters and twists. The story builds tension through gossip and revelations, addressing domestic violence and trauma, making it a compelling read on the facades people maintain.</description>
+        <image>big-little-lies.jpg</image>
+        <stock>46</stock>
+    </book>
+    <book id="25">
+        <title>Verity</title>
+        <author>Colleen Hoover</author>
+        <genre>Mystery &amp; Thriller</genre>
+        <price>14.99</price>
+        <rating>4.6</rating>
+        <description>"Verity" is a chilling psychological thriller where struggling writer Lowen Ashleigh is hired to complete bestselling author Verity Crawford's series after Verity's accident leaves her comatose. At the Crawford estate, Lowen discovers a disturbing manuscript revealing Verity's dark secrets about her family, including her twin daughters' deaths. As Lowen falls for Verity's husband Jeremy, she questions the manuscript's truth and Verity's condition. Hoover's 2018 novel blends romance and suspense with unreliable narration and twists, exploring obsession and deception. A TikTok sensation with millions sold, it's praised for its gripping plot and shocking ending, keeping readers debating reality versus fiction.</description>
+        <image>verity.jpg</image>
+        <stock>31</stock>
+    </book>
+
+    <book id="26">
+        <title>The Love Hypothesis</title>
+        <author>Ali Hazelwood</author>
+        <genre>Romance</genre>
+        <price>16.00</price>
+        <rating>4.5</rating>
+        <description>"The Love Hypothesis" is a charming STEM romance about PhD candidate Olive Smith, who fake-dates grumpy professor Adam Carlsen to convince her friend she's over her ex. What starts as a lab kiss for show evolves into real feelings amid academic pressures and personal insecurities. Hazelwood's 2021 debut, inspired by Reylo fanfic, celebrates women in science with witty banter, steamy scenes, and themes of self-worth. A bestseller with TikTok fame, it's praised for relatable characters and humor, appealing to romance fans and aspiring scientists alike.</description>
+        <image>love-hypothesis.jpg</image>
+        <stock>52</stock>
+    </book>
+    <book id="27">
+        <title>Book Lovers</title>
+        <author>Emily Henry</author>
+        <genre>Romance</genre>
+        <price>17.00</price>
+        <rating>4.7</rating>
+        <description>"Book Lovers" is a meta romance subverting tropes, following literary agent Nora Stephens on a trip to Sunshine Falls with her sister, where she repeatedly encounters rival editor Charlie Lastra. Amid small-town charm, they bond over books and vulnerabilities, turning enmity into love. Henry's 2022 novel explores ambition, grief, and family with sharp wit and emotional depth. A bestseller, it's lauded for clever dialogue and relatable protagonists, perfect for bookish readers seeking smart, heartfelt romance.</description>
+        <image>book-lovers.jpg</image>
+        <stock>48</stock>
+    </book>
+    <book id="28">
+        <title>Red, White &amp; Royal Blue</title>
+        <author>Casey McQuiston</author>
+        <genre>Romance</genre>
+        <price>15.99</price>
+        <rating>4.6</rating>
+        <description>"Red, White & Royal Blue" is a delightful queer romance between Alex Claremont-Diaz, First Son of the US, and Henry, Prince of Wales. After a public feud, they fake friendship for diplomacy, but it blossoms into secret love amid political pressures. McQuiston's 2019 debut mixes humor, steamy scenes, and social commentary on identity and duty. A bestseller adapted into a film, it's celebrated for representation and optimism, charming readers with witty emails and heartfelt moments.</description>
+        <image>red-white-blue.jpg</image>
+        <stock>41</stock>
+    </book>
+    <book id="29">
+        <title>It Ends with Us</title>
+        <author>Colleen Hoover</author>
+        <genre>Romance</genre>
+        <price>16.50</price>
+        <rating>4.8</rating>
+        <description>"It Ends with Us" is an emotional romance following Lily Bloom, who opens a flower shop and falls for neurosurgeon Ryle Kincaid, but their relationship echoes her abusive childhood. When ex Atlas Corrigan reappears, Lily faces hard choices about love and cycles of violence. Hoover's 2016 novel, inspired by her mother's story, blends passion and pain with themes of empowerment. A massive bestseller with film adaptation, it's praised for raw honesty and triggering discussions on domestic abuse.</description>
+        <image>it-ends-with-us.jpg</image>
+        <stock>55</stock>
+    </book>
+    <book id="30">
+        <title>Beach Read</title>
+        <author>Emily Henry</author>
+        <genre>Romance</genre>
+        <price>15.50</price>
+        <rating>4.8</rating>
+        <description>"Beach Read" is a sunny romance about romance writer January Andrews and literary author Augustus Everett, neighbors in a lake town battling writer's block. They swap genres—January writes literary fiction, Gus romance—for inspiration, leading to vulnerability and love. Henry's 2020 debut explores grief, creativity, and tropes with humor and heart. A bestseller, it's loved for banter and depth, ideal for summer reading with emotional resonance.</description>
+        <image>beach-read.jpg</image>
+        <stock>44</stock>
+    </book>
+
+    <book id="31">
+        <title>Becoming</title>
+        <author>Michelle Obama</author>
+        <genre>Biography</genre>
+        <price>20.00</price>
+        <rating>4.9</rating>
+        <description>"Becoming" is Michelle Obama's intimate memoir chronicling her journey from Chicago's South Side to the White House. She shares her childhood in a working-class family, Princeton and Harvard education, career as a lawyer, meeting Barack, motherhood, and First Lady role. Published in 2018, it reflects on race, feminism, and public life with candor and grace. A record-breaking bestseller with over 17 million copies sold, it's inspiring and relatable, emphasizing growth and hope.</description>
+        <image>becoming.jpg</image>
+        <stock>34</stock>
+    </book>
+    <book id="32">
+        <title>Steve Jobs</title>
+        <author>Walter Isaacson</author>
+        <genre>Biography</genre>
+        <price>21.00</price>
+        <rating>4.7</rating>
+        <description>"Steve Jobs" is Walter Isaacson's authorized biography of the Apple co-founder, based on over 40 interviews with Jobs and hundreds with others. It covers his adoption, hippie youth, Apple founding with Wozniak, ouster and return, Pixar success, and innovations like iPhone. Published in 2011, it portrays Jobs' genius, intensity, and flaws, exploring creativity and leadership. A bestseller adapted into a film, it's essential for understanding tech's evolution.</description>
+        <image>steve-jobs.jpg</image>
+        <stock>39</stock>
+    </book>
+    <book id="33">
+        <title>Born a Crime</title>
+        <author>Trevor Noah</author>
+        <genre>Biography</genre>
+        <price>18.00</price>
+        <rating>4.8</rating>
+        <description>"Born a Crime" is Trevor Noah's memoir of growing up in apartheid South Africa as a mixed-race child, illegal under the regime. Raised by his fearless mother, he navigates poverty, violence, and identity with humor and insight. Published in 2016, it shares stories of mischief, resilience, and cultural clashes. A bestseller, it's praised for wit and depth, offering perspectives on racism and family, adapted into a young readers' edition.</description>
+        <image>born-a-crime.jpg</image>
+        <stock>31</stock>
+    </book>
+    <book id="34">
+        <title>The Diary of a Young Girl</title>
+        <author>Anne Frank</author>
+        <genre>Biography</genre>
+        <price>12.00</price>
+        <rating>4.9</rating>
+        <description>"The Diary of a Young Girl" is Anne Frank's poignant account of hiding from Nazis in Amsterdam's "Secret Annex" with her family during WWII. Written from 1942-1944, it captures her adolescence, dreams, fears, and observations on humanity amid persecution. Discovered after her death in Bergen-Belsen, published in 1947, it's a Holocaust testament read by millions, translated into 70 languages, inspiring hope and remembrance.</description>
+        <image>anne-frank.jpg</image>
+        <stock>42</stock>
+    </book>
+    <book id="35">
+        <title>Open</title>
+        <author>Andre Agassi</author>
+        <genre>Biography</genre>
+        <price>17.99</price>
+        <rating>4.7</rating>
+        <description>"Open" is Andre Agassi's candid autobiography, revealing his hate-love relationship with tennis pushed by his demanding father. It chronicles his rebellious youth, Grand Slam wins, struggles with addiction and depression, and redemption through love and philanthropy. Co-written with J.R. Moehringer in 2009, it's raw and introspective, offering insights into fame and self-discovery. A bestseller, it's acclaimed for honesty and literary quality.</description>
+        <image>open-agassi.jpg</image>
+        <stock>37</stock>
+    </book>
+
+    <book id="36">
+        <title>The Polar Express</title>
+        <author>Chris Van Allsburg</author>
+        <genre>Children's Books</genre>
+        <price>18.00</price>
+        <rating>4.9</rating>
+        <description>"The Polar Express" is a magical children's book about a boy doubting Santa who boards a mysterious train to the North Pole on Christmas Eve. Amid adventures with other children, he meets Santa and receives the first gift—a bell only believers hear. Van Allsburg's 1985 Caldecott-winning illustrations evoke wonder and nostalgia. A holiday classic adapted into a film, it celebrates belief and the spirit of Christmas.</description>
+        <image>polar-express.jpg</image>
+        <stock>47</stock>
+    </book>
+    <book id="37">
+        <title>Matilda</title>
+        <author>Roald Dahl</author>
+        <genre>Children's Books</genre>
+        <price>9.99</price>
+        <rating>4.8</rating>
+        <description>"Matilda" is Roald Dahl's enchanting tale of a brilliant girl with neglectful parents who discovers telekinetic powers. At school, she befriends kind teacher Miss Honey and battles tyrannical headmistress Miss Trunchbull. Using wits and abilities, Matilda seeks justice and a better life. Published in 1988 with Quentin Blake's illustrations, it's a celebration of reading and empowerment, adapted into films and musicals, beloved for humor and heart.</description>
+        <image>matilda.jpg</image>
+        <stock>53</stock>
+    </book>
+    <book id="38">
+        <title>Wonder</title>
+        <author>R.J. Palacio</author>
+        <genre>Children's Books</genre>
+        <price>14.99</price>
+        <rating>4.8</rating>
+        <description>"Wonder" is a touching novel about Auggie Pullman, a boy with facial differences entering fifth grade after homeschooling. Told from multiple perspectives, it explores kindness, bullying, and acceptance amid school challenges. Palacio's 2012 debut inspires empathy, with themes of inner beauty. A bestseller adapted into a film, it's used in schools to promote anti-bullying, resonating with readers of all ages.</description>
+        <image>wonder.jpg</image>
+        <stock>41</stock>
+    </book>
+    <book id="39">
+        <title>The Tale of Peter Rabbit</title>
+        <author>Beatrix Potter</author>
+        <genre>Children's Books</genre>
+        <price>7.99</price>
+        <rating>4.7</rating>
+        <description>"The Tale of Peter Rabbit" is Beatrix Potter's classic about a mischievous rabbit who sneaks into Mr. McGregor's garden, eating vegetables and narrowly escaping. Disobeying his mother, Peter loses his clothes but learns a lesson. Published in 1902 with Potter's watercolors, it's a timeless story of adventure and caution, spawning a series and adaptations, delighting generations with charm and moral.</description>
+        <image>peter-rabbit.jpg</image>
+        <stock>49</stock>
+    </book>
+    <book id="40">
+        <title>Green Eggs and Ham</title>
+        <author>Dr. Seuss</author>
+        <genre>Children's Books</genre>
+        <price>8.50</price>
+        <rating>4.8</rating>
+        <description>"Green Eggs and Ham" is Dr. Seuss's whimsical tale of Sam-I-Am persistently offering the dish to a reluctant character in absurd locations—like a box or with a fox. Using only 50 words, it teaches openness to new things through rhyme and repetition. Published in 1960, its playful illustrations and humor make it a beginner reader favorite, selling millions and inspiring adaptations.</description>
+        <image>green-eggs-ham.jpg</image>
+        <stock>44</stock>
+    </book>
+
+    <book id="41">
+        <title>The Great Gatsby</title>
+        <author>F. Scott Fitzgerald</author>
+        <genre>Fiction</genre>
+        <price>15.00</price>
+        <rating>4.4</rating>
+        <description>"The Great Gatsby" is F. Scott Fitzgerald's Jazz Age novel about mysterious millionaire Jay Gatsby's obsession with Daisy Buchanan, narrated by Nick Carraway. Set in 1920s Long Island, it critiques the American Dream through parties, infidelity, and tragedy. Published in 1925, its lyrical prose explores love, wealth, and disillusionment. A classic adapted multiple times, it's studied for themes of excess and aspiration.</description>
+        <image>great-gatsby.jpg</image>
+        <stock>36</stock>
+    </book>
+    <book id="42">
+        <title>To Kill a Mockingbird</title>
+        <author>Harper Lee</author>
+        <genre>Fiction</genre>
+        <price>14.99</price>
+        <rating>4.9</rating>
+        <description>"To Kill a Mockingbird" is Harper Lee's Pulitzer-winning novel set in 1930s Alabama, following Scout Finch and her father Atticus defending a black man accused of rape. Through childhood eyes, it addresses racism, morality, and innocence. Published in 1960, it's a classic on empathy and justice, adapted into an Oscar-winning film, influencing generations with its profound messages.</description>
+        <image>to-kill-mockingbird.jpg</image>
+        <stock>40</stock>
+    </book>
+    <book id="43">
+        <title>The Catcher in the Rye</title>
+        <author>J.D. Salinger</author>
+        <genre>Fiction</genre>
+        <price>12.50</price>
+        <rating>4.0</rating>
+        <description>"The Catcher in the Rye" is J.D. Salinger's iconic novel about teenage angst, narrated by Holden Caulfield after expulsion from prep school. Wandering New York, he critiques "phoniness" and yearns for innocence. Published in 1951, it captures adolescent rebellion and alienation, becoming a controversial classic read by millions, influencing youth culture and literature.</description>
+        <image>catcher-rye.jpg</image>
+        <stock>33</stock>
+    </book>
+    <book id="44">
+        <title>1984</title>
+        <author>George Orwell</author>
+        <genre>Fiction</genre>
+        <price>13.99</price>
+        <rating>4.7</rating>
+        <description>"1984" is George Orwell's dystopian novel about totalitarian regime in Airstrip One, where Winston Smith rebels against Big Brother's surveillance and thought control. Concepts like Newspeak, doublethink, and the Party's manipulation warn of authoritarianism. Published in 1949, it's a seminal work on freedom and truth, influencing language and politics, with enduring relevance.</description>
+        <image>1984.jpg</image>
+        <stock>38</stock>
+    </book>
+    <book id="45">
+        <title>Life of Pi</title>
+        <author>Yann Martel</author>
+        <genre>Fiction</genre>
+        <price>16.00</price>
+        <rating>4.6</rating>
+        <description>"Life of Pi" is Yann Martel's philosophical novel about Pi Patel, a boy surviving 227 days shipwrecked with a Bengal tiger named Richard Parker. Blending adventure, spirituality, and surrealism, it explores faith and storytelling. Published in 2001, winning the Man Booker Prize, it's adapted into an Oscar-winning film, provoking thoughts on reality and belief.</description>
+        <image>life-of-pi.jpg</image>
+        <stock>35</stock>
+    </book>
+
+    <book id="46">
+        <title>Thinking, Fast and Slow</title>
+        <author>Daniel Kahneman</author>
+        <genre>Non-Fiction</genre>
+        <price>18.50</price>
+        <rating>4.6</rating>
+        <description>"Thinking, Fast and Slow" by Nobel laureate Daniel Kahneman explores two thinking systems: fast, intuitive System 1 and slow, logical System 2. Through experiments, it reveals biases like anchoring and overconfidence affecting decisions. Published in 2011, it's a psychology landmark, influencing economics and policy, with accessible insights on human judgment and rationality.</description>
+        <image>thinking-fast-slow.jpg</image>
+        <stock>42</stock>
+    </book>
+    <book id="47">
+        <title>Atomic Habits</title>
+        <author>James Clear</author>
+        <genre>Non-Fiction</genre>
+        <price>16.20</price>
+        <rating>4.9</rating>
+        <description>"Atomic Habits" by James Clear offers a practical guide to building good habits and breaking bad ones through small changes. Using science and stories, it covers identity, systems, and cues for lasting improvement. Published in 2018, it's a self-help bestseller, empowering readers in productivity, health, and success with actionable strategies.</description>
+        <image>atomic-habits.jpg</image>
+        <stock>51</stock>
+    </book>
+    <book id="48">
+        <title>Guns, Germs, and Steel</title>
+        <author>Jared Diamond</author>
+        <genre>Non-Fiction</genre>
+        <price>20.00</price>
+        <rating>4.5</rating>
+        <description>"Guns, Germs, and Steel" by Jared Diamond explains why Eurasian societies dominated, attributing it to geography, agriculture, and biology rather than race. Covering 13,000 years, it discusses domestication, disease, and technology. Published in 1997, Pulitzer winner, it's influential in history and anthropology, challenging Eurocentrism with environmental determinism.</description>
+        <image>guns-germs-steel.jpg</image>
+        <stock>45</stock>
+    </book>
+    <book id="49">
+        <title>The Tipping Point</title>
+        <author>Malcolm Gladwell</author>
+        <genre>Non-Fiction</genre>
+        <price>15.99</price>
+        <rating>4.4</rating>
+        <description>"The Tipping Point" by Malcolm Gladwell examines how ideas, trends, and behaviors spread like epidemics through connectors, mavens, and salesmen. Using examples from fashion to crime drops, it explores stickiness and context. Published in 2000, it's a pop sociology hit, influencing marketing and social science with engaging anecdotes.</description>
+        <image>tipping-point.jpg</image>
+        <stock>37</stock>
+    </book>
+    <book id="50">
+        <title>Man's Search for Meaning</title>
+        <author>Viktor Frankl</author>
+        <genre>Non-Fiction</genre>
+        <price>12.00</price>
+        <rating>4.9</rating>
+        <description>"Man's Search for Meaning" by Viktor Frankl recounts his Nazi camp experiences and introduces logotherapy, emphasizing finding purpose amid suffering. Published in 1946, it blends memoir and psychology, arguing attitude determines response to fate. A classic with millions sold, it's inspirational for resilience and existential insight.</description>
+        <image>mans-search-meaning.jpg</image>
+        <stock>40</stock>
+    </book>
+
+    <book id="51">
+        <title>The Left Hand of Darkness</title>
+        <author>Ursula K. Le Guin</author>
+        <genre>Science Fiction</genre>
+        <price>17.99</price>
+        <rating>4.6</rating>
+        <description>"The Left Hand of Darkness" is Ursula K. Le Guin's groundbreaking sci-fi about envoy Genly Ai on Gethen, where inhabitants are ambisexual, shifting genders monthly. Exploring friendship with Estraven amid political intrigue and a harsh winter trek, it examines gender, loyalty, and otherness. Published in 1969, Hugo and Nebula winner, it's feminist sci-fi pioneer.</description>
+        <image>left-hand-darkness.jpg</image>
+        <stock>34</stock>
+    </book>
+    <book id="52">
+        <title>Foundation</title>
+        <author>Isaac Asimov</author>
+        <genre>Science Fiction</genre>
+        <price>15.50</price>
+        <rating>4.7</rating>
+        <description>"Foundation" is Isaac Asimov's sci-fi classic about psychohistorian Hari Seldon predicting the Galactic Empire's fall and creating Foundations to shorten the dark age. Spanning centuries, it explores science, religion, and politics through crises. Published in 1951, Hugo winner for series, it influences space opera with grand scope and ideas.</description>
+        <image>foundation.jpg</image>
+        <stock>39</stock>
+    </book>
+    <book id="53">
+        <title>Kindred</title>
+        <author>Octavia Butler</author>
+        <genre>Science Fiction</genre>
+        <price>16.00</price>
+        <rating>4.8</rating>
+        <description>"Kindred" by Octavia Butler is a time-travel novel where modern black woman Dana is pulled to antebellum Maryland to save her white ancestor. Facing slavery's horrors, she navigates survival and identity. Published in 1979, it blends sci-fi and history, exploring race and power. A landmark work, influential in Afrofuturism.</description>
+        <image>kindred.jpg</image>
+        <stock>31</stock>
+    </book>
+    <book id="54">
+        <title>Ender's Game</title>
+        <author>Orson Scott Card</author>
+        <genre>Science Fiction</genre>
+        <price>14.99</price>
+        <rating>4.7</rating>
+        <description>"Ender's Game" is Orson Scott Card's military sci-fi about child genius Ender Wiggin trained in Battle School to fight alien "buggers." Through simulations, he learns strategy and empathy amid isolation. Published in 1985, Hugo and Nebula winner, it examines war ethics and childhood. Adapted into a film, it's a genre staple.</description>
+        <image>enders-game.jpg</image>
+        <stock>43</stock>
+    </book>
+    <book id="55">
+        <title>The Three-Body Problem</title>
+        <author>Cixin Liu</author>
+        <genre>Science Fiction</genre>
+        <price>18.99</price>
+        <rating>4.6</rating>
+        <description>"The Three-Body Problem" by Cixin Liu is hard sci-fi about Earth's contact with Trisolaris via a virtual game, stemming from Cultural Revolution events. It explores physics, alien invasion, and humanity's response. Published in 2008 (English 2014), Hugo winner, it's acclaimed for ideas and scale, first in Remembrance of Earth's Past trilogy.</description>
+        <image>three-body-problem.jpg</image>
+        <stock>36</stock>
+    </book>
+
+    <book id="56">
+        <title>The Girl on the Train</title>
+        <author>Paula Hawkins</author>
+        <genre>Mystery &amp; Thriller</genre>
+        <price>16.00</price>
+        <rating>4.1</rating>
+        <description>"The Girl on the Train" is Paula Hawkins' thriller about alcoholic Rachel Watson, obsessed with a couple seen from her commute, until the woman disappears. Alternating perspectives reveal unreliable memories and secrets. Published in 2015, it's a bestseller adapted into a film, gripping with twists on perception and domestic life.</description>
+        <image>girl-on-train.jpg</image>
+        <stock>41</stock>
+    </book>
+    <book id="57">
+        <title>Rebecca</title>
+        <author>Daphne du Maurier</author>
+        <genre>Mystery &amp; Thriller</genre>
+        <price>15.50</price>
+        <rating>4.7</rating>
+        <description>"Rebecca" is Daphne du Maurier's Gothic thriller about a young woman marrying widower Maxim de Winter, moving to Manderley where his late wife Rebecca's shadow looms. Jealous of the housekeeper's devotion, she uncovers dark secrets. Published in 1938, it's a classic of suspense, adapted multiple times, exploring jealousy and identity.</description>
+        <image>rebecca.jpg</image>
+        <stock>38</stock>
+    </book>
+    <book id="58">
+        <title>The 7 1/2 Deaths of Evelyn Hardcastle</title>
+        <author>Stuart Turton</author>
+        <genre>Mystery &amp; Thriller</genre>
+        <price>17.99</price>
+        <rating>4.4</rating>
+        <description>"The 7 1/2 Deaths of Evelyn Hardcastle" is Stuart Turton's inventive mystery where Aiden Bishop relives a day in different bodies to solve Evelyn's murder at Blackheath manor. With time loops and plague doctor guidance, it's a puzzle of deception. Published in 2018, it's praised for clever plot and Agatha Christie meets Groundhog Day vibe.</description>
+        <image>evelyn-hardcastle.jpg</image>
+        <stock>44</stock>
+    </book>
+    <book id="59">
+        <title>And Then There Were None</title>
+        <author>Agatha Christie</author>
+        <genre>Mystery &amp; Thriller</genre>
+        <price>12.99</price>
+        <rating>4.9</rating>
+        <description>"And Then There Were None" is Agatha Christie's masterful whodunit where ten strangers are invited to an island and accused of past crimes via recording. They die one by one per a nursery rhyme, revealing a justice plot. Published in 1939, it's her best-seller, adapted widely, defining locked-room mysteries.</description>
+        <image>and-then-none.jpg</image>
+        <stock>32</stock>
+    </book>
+    <book id="60">
+        <title>Sharp Objects</title>
+        <author>Gillian Flynn</author>
+        <genre>Mystery &amp; Thriller</genre>
+        <price>14.50</price>
+        <rating>4.3</rating>
+        <description>"Sharp Objects" is Gillian Flynn's debut thriller about reporter Camille Preaker returning to her Missouri hometown to cover young girls' murders. Confronting her dysfunctional family and self-harm past, she uncovers twisted secrets. Published in 2006, it's dark and psychological, adapted into an HBO series, exploring trauma and small-town horrors.</description>
+        <image>sharp-objects.jpg</image>
+        <stock>47</stock>
+    </book>
+
+    <book id="61">
+        <title>The Hating Game</title>
+        <author>Sally Thorne</author>
+        <genre>Romance</genre>
+        <price>15.99</price>
+        <rating>4.5</rating>
+        <description>"The Hating Game" is Sally Thorne's enemies-to-lovers romance about executive assistants Lucy Hutton and Joshua Templeman, rivals at a publishing company vying for promotion. Their banter turns to attraction amid office games. Published in 2016, it's witty and steamy, a bestseller adapted into a film, celebrating workplace romance tropes.</description>
+        <image>hating-game.jpg</image>
+        <stock>50</stock>
+    </book>
+    <book id="62">
+        <title>Outlander</title>
+        <author>Diana Gabaldon</author>
+        <genre>Romance</genre>
+        <price>18.00</price>
+        <rating>4.8</rating>
+        <description>"Outlander" is Diana Gabaldon's time-travel romance where WWII nurse Claire Randall is transported to 1743 Scotland, meeting Highlander Jamie Fraser. Amid clan wars and passion, she navigates dual lives. Published in 1991, first in series, it's a bestseller with TV adaptation, blending history, adventure, and love.</description>
+        <image>outlander.jpg</image>
+        <stock>43</stock>
+    </book>
+    <book id="63">
+        <title>The Unhoneymooners</title>
+        <author>Christina Lauren</author>
+        <genre>Romance</genre>
+        <price>16.50</price>
+        <rating>4.4</rating>
+        <description>"The Unhoneymooners" is Christina Lauren's rom-com about Olive Torres and enemy Ethan Thomas, who take a Maui honeymoon after food poisoning hits the wedding party. Faking coupledom leads to real sparks and secrets. Published in 2019, it's fun and flirty, a bestseller praising banter and tropical setting.</description>
+        <image>unhoneymooners.jpg</image>
+        <stock>48</stock>
+    </book>
+    <book id="64">
+        <title>The Song of Achilles</title>
+        <author>Madeline Miller</author>
+        <genre>Romance</genre>
+        <price>17.99</price>
+        <rating>4.8</rating>
+        <description>"The Song of Achilles" is Madeline Miller's retelling of the Iliad focusing on the romance between Achilles and Patroclus. From childhood friendship to Trojan War heroes, it explores love, fate, and heroism with mythical elements. Published in 2011, Orange Prize winner, it's lyrical and emotional, appealing to mythology fans.</description>
+        <image>song-of-achilles.jpg</image>
+        <stock>52</stock>
+    </book>
+    <book id="65">
+        <title>People We Meet on Vacation</title>
+        <author>Emily Henry</author>
+        <genre>Romance</genre>
+        <price>16.00</price>
+        <rating>4.5</rating>
+        <description>"People We Meet on Vacation" is Emily Henry's friends-to-lovers romance about Poppy and Alex, opposites who vacation yearly until a rift. Their Palm Springs trip rekindles feelings. Published in 2021, it's heartfelt with travel vibes, a bestseller lauded for chemistry and growth, perfect for summer reads.</description>
+        <image>people-meet-vacation.jpg</image>
+        <stock>39</stock>
+    </book>
+
+    <book id="66">
+        <title>I Know Why the Caged Bird Sings</title>
+        <author>Maya Angelou</author>
+        <genre>Biography</genre>
+        <price>15.00</price>
+        <rating>4.8</rating>
+        <description>"I Know Why the Caged Bird Sings" is Maya Angelou's memoir of childhood in segregated Arkansas, facing racism, trauma, and displacement. From mutism after assault to self-discovery through literature, it's poetic and resilient. Published in 1969, it's a classic on identity and strength, influencing autobiography and civil rights discourse.</description>
+        <image>caged-bird-sings.jpg</image>
+        <stock>35</stock>
+    </book>
+    <book id="67">
+        <title>The Glass Castle</title>
+        <author>Jeannette Walls</author>
+        <genre>Biography</genre>
+        <price>17.00</price>
+        <rating>4.7</rating>
+        <description>"The Glass Castle" is Jeannette Walls' memoir of nomadic childhood with eccentric, impoverished parents—dreamer father and artist mother—leading to neglect and adventure. From desert scavenging to New York success, it's about forgiveness and resilience. Published in 2005, bestseller adapted into film, praised for honesty and humor.</description>
+        <image>glass-castle.jpg</image>
+        <stock>30</stock>
+    </book>
+    <book id="68">
+        <title>A Promised Land</title>
+        <author>Barack Obama</author>
+        <genre>Biography</genre>
+        <price>32.00</price>
+        <rating>4.8</rating>
+        <description>"A Promised Land" is Barack Obama's presidential memoir covering his early life, 2008 campaign, and first term, including healthcare reform and bin Laden raid. Reflective on leadership and race, published in 2020, it's insightful and personal. A record bestseller, it offers behind-the-scenes views on hope and change.</description>
+        <image>promised-land.jpg</image>
+        <stock>38</stock>
+    </book>
+    <book id="69">
+        <title>Leonardo da Vinci</title>
+        <author>Walter Isaacson</author>
+        <genre>Biography</genre>
+        <price>22.00</price>
+        <rating>4.7</rating>
+        <description>"Leonardo da Vinci" by Walter Isaacson explores the Renaissance genius's life, art, and science, from Mona Lisa to anatomy studies. Based on notebooks, it highlights curiosity and observation. Published in 2017, it's richly illustrated, bestseller praising Leonardo's creativity, blending history and insight for modern innovators.</description>
+        <image>leonardo.jpg</image>
+        <stock>33</stock>
+    </book>
+    <book id="70">
+        <title>The Wright Brothers</title>
+        <author>David McCullough</author>
+        <genre>Biography</genre>
+        <price>19.99</price>
+        <rating>4.8</rating>
+        <description>"The Wright Brothers" by David McCullough chronicles Wilbur and Orville's journey from bicycle makers to aviation pioneers, culminating in 1903 Kitty Hawk flight. Detailing perseverance and innovation, published in 2015, it's engaging history, bestseller lauding their humility and impact on modernity.</description>
+        <image>wright-brothers.jpg</image>
+        <stock>41</stock>
+    </book>
+
+    <book id="71">
+        <title>The Name of the Wind</title>
+        <author>Patrick Rothfuss</author>
+        <genre>Fantasy</genre>
+        <price>18.99</price>
+        <rating>4.8</rating>
+        <description>"The Name of the Wind" is Patrick Rothfuss' debut fantasy about Kvothe, a legendary wizard recounting his youth—from troupe life to University magic studies, seeking Chandrian who killed his family. Rich in world-building and music, published in 2007, it's a bestseller in Kingkiller Chronicle series, praised for prose and depth.</description>
+        <image>name-of-wind.jpg</image>
+        <stock>45</stock>
+    </book>
+    <book id="72">
+        <title>A Game of Thrones</title>
+        <author>George R.R. Martin</author>
+        <genre>Fantasy</genre>
+        <price>12.00</price>
+        <rating>4.8</rating>
+        <description>"A Game of Thrones" launches George R.R. Martin's epic fantasy series, where noble families like Stark and Lannister intrigue for Westeros' Iron Throne amid ancient threats. With complex characters and shocking twists, published in 1996, it's a gritty masterpiece adapted into HBO's hit show, redefining genre with politics and realism.</description>
+        <image>game-of-thrones.jpg</image>
+        <stock>42</stock>
+    </book>
+    <book id="73">
+        <title>Mistborn: The Final Empire</title>
+        <author>Brandon Sanderson</author>
+        <genre>Fantasy</genre>
+        <price>15.99</price>
+        <rating>4.8</rating>
+        <description>"Mistborn: The Final Empire" is Brandon Sanderson's fantasy about thief Vin discovering Allomancy—burning metals for powers—in a world ruled by immortal Lord Ruler. Joining a rebellion, she uncovers secrets. Published in 2006, first in series, it's acclaimed for magic system and twists, a modern fantasy staple.</description>
+        <image>mistborn.jpg</image>
+        <stock>38</stock>
+    </book>
+    <book id="74">
+        <title>Circe</title>
+        <author>Madeline Miller</author>
+        <genre>Fantasy</genre>
+        <price>17.00</price>
+        <rating>4.7</rating>
+        <description>"Circe" by Madeline Miller reimagines the witch from "The Odyssey" as a banished nymph discovering sorcery, transforming sailors, and encountering gods like Odysseus. Exploring immortality and power, published in 2018, it's a feminist myth retelling, bestseller praised for lyrical prose and empowerment themes.</description>
+        <image>circe.jpg</image>
+        <stock>40</stock>
+    </book>
+    <book id="75">
+        <title>Harry Potter and the Goblet of Fire</title>
+        <author>J.K. Rowling</author>
+        <genre>Fantasy</genre>
+        <price>26.99</price>
+        <rating>4.9</rating>
+        <description>"Harry Potter and the Goblet of Fire" is J.K. Rowling's fourth book where Harry is mysteriously entered into the Triwizard Tournament, facing dragons and mazes amid Voldemort's return. With Quidditch World Cup and teen drama, published in 2000, it's pivotal, expanding the wizarding world with darker tones.</description>
+        <image>harry-potter-4.jpg</image>
+        <stock>36</stock>
+    </book>
+    <book id="76">
+        <title>The Fellowship of the Ring</title>
+        <author>J.R.R. Tolkien</author>
+        <genre>Fantasy</genre>
+        <price>15.00</price>
+        <rating>4.9</rating>
+        <description>"The Fellowship of the Ring" is J.R.R. Tolkien's first "Lord of the Rings" volume, where hobbit Frodo Baggins inherits the One Ring and journeys to destroy it in Mordor with a diverse fellowship. Published in 1954, it's epic fantasy cornerstone, rich in lore, friendship, and heroism.</description>
+        <image>fellowship-ring.jpg</image>
+        <stock>31</stock>
+    </book>
+    <book id="77">
+        <title>American Gods</title>
+        <author>Neil Gaiman</author>
+        <genre>Fantasy</genre>
+        <price>16.50</price>
+        <rating>4.5</rating>
+        <description>"American Gods" by Neil Gaiman follows ex-con Shadow Moon working for Mr. Wednesday (Odin) in a war between old immigrant gods and new American ones like technology. Blending mythology and road trip, published in 2001, Hugo winner, adapted for TV, explores belief and culture.</description>
+        <image>american-gods.jpg</image>
+        <stock>28</stock>
+    </book>
+    <book id="78">
+        <title>The Way of Kings</title>
+        <author>Brandon Sanderson</author>
+        <genre>Fantasy</genre>
+        <price>20.99</price>
+        <rating>4.9</rating>
+        <description>"The Way of Kings" is Brandon Sanderson's epic fantasy opening Stormlight Archive, set on Roshar with highstorms and spren. Following slave Kaladin, assassin Szeth, and scholar Shallan, it weaves war, honor, and ancient magic. Published in 2010, it's lauded for world-building and character depth.</description>
+        <image>way-of-kings.jpg</image>
+        <stock>34</stock>
+    </book>
+
+    <book id="79">
+        <title>The Devil in the White City</title>
+        <author>Erik Larson</author>
+        <genre>History</genre>
+        <price>17.95</price>
+        <rating>4.7</rating>
+        <description>"The Devil in the White City" by Erik Larson intertwines the 1893 Chicago World's Fair's creation by architect Daniel Burnham and serial killer H.H. Holmes' murders in his "Murder Castle." Published in 2003, it's narrative nonfiction blending innovation and horror, a bestseller exploring ambition and evil.</description>
+        <image>devil-white-city.jpg</image>
+        <stock>45</stock>
+    </book>
+    <book id="80">
+        <title>Team of Rivals</title>
+        <author>Doris Kearns Goodwin</author>
+        <genre>History</genre>
+        <price>21.00</price>
+        <rating>4.8</rating>
+        <description>"Team of Rivals" by Doris Kearns Goodwin details Abraham Lincoln's political genius in assembling a cabinet of former rivals like Seward and Chase during the Civil War. Published in 2005, it's insightful biography, inspiring Spielberg's film, praising leadership and unity in crisis.</description>
+        <image>team-of-rivals.jpg</image>
+        <stock>38</stock>
+    </book>
+    <book id="81">
+        <title>The Splendid and the Vile</title>
+        <author>Erik Larson</author>
+        <genre>History</genre>
+        <price>19.99</price>
+        <rating>4.7</rating>
+        <description>"The Splendid and the Vile" by Erik Larson chronicles Winston Churchill's first year as prime minister during the Blitz, focusing on leadership, family, and British resilience against Nazi bombings. Published in 2020, it's vivid narrative history, bestseller drawing from diaries for personal insights.</description>
+        <image>splendid-vile.jpg</image>
+        <stock>42</stock>
+    </book>
+    <book id="82">
+        <title>Killers of the Flower Moon</title>
+        <author>David Grann</author>
+        <genre>History</genre>
+        <price>17.00</price>
+        <rating>4.8</rating>
+        <description>"Killers of the Flower Moon" by David Grann exposes 1920s Osage Nation murders for oil rights, leading to the FBI's birth under J. Edgar Hoover. Published in 2017, it's gripping true crime history on greed and injustice, bestseller adapted into Scorsese's film.</description>
+        <image>killers-flower-moon.jpg</image>
+        <stock>39</stock>
+    </book>
+    <book id="83">
+        <title>1776</title>
+        <author>David McCullough</author>
+        <genre>History</genre>
+        <price>18.50</price>
+        <rating>4.8</rating>
+        <description>"1776" by David McCullough vividly recounts the American Revolution's pivotal year, from Boston siege to Trenton victory, focusing on George Washington and troops' struggles. Published in 2005, it's engaging narrative history, bestseller praising patriotism and perseverance in founding the nation.</description>
+        <image>1776.jpg</image>
+        <stock>35</stock>
+    </book>
+    <book id="84">
+        <title>Salt: A World History</title>
+        <author>Mark Kurlansky</author>
+        <genre>History</genre>
+        <price>16.99</price>
+        <rating>4.4</rating>
+        <description>"Salt: A World History" by Mark Kurlansky traces salt's role in civilizations, from ancient China to Gandhi's march, influencing economy, wars, and cuisine. Published in 2002, it's fascinating microhistory, bestseller blending science and anecdotes, revealing how a simple mineral shaped human progress.</description>
+        <image>salt-history.jpg</image>
+        <stock>47</stock>
+    </book>
+    <book id="85">
+        <title>The Warmth of Other Suns</title>
+        <author>Isabel Wilkerson</author>
+        <genre>History</genre>
+        <price>18.00</price>
+        <rating>4.9</rating>
+        <description>"The Warmth of Other Suns" by Isabel Wilkerson chronicles the Great Migration of six million African Americans fleeing Jim Crow South for North and West, 1915-1970. Through three lives, it's epic history of hope and hardship. Published in 2010, Pulitzer finalist, profound on race and America.</description>
+        <image>warmth-other-suns.jpg</image>
+        <stock>33</stock>
+    </book>
+    <book id="86">
+        <title>Chernobyl: The History of a Nuclear Catastrophe</title>
+        <author>Serhii Plokhy</author>
+        <genre>History</genre>
+        <price>20.00</price>
+        <rating>4.7</rating>
+        <description>"Chernobyl" by Serhii Plokhy details the 1986 nuclear disaster's causes, explosion, and cover-up, contributing to Soviet collapse. Using declassified files, it's comprehensive history on human error and heroism. Published in 2018, prize-winner, timely on energy and politics, basis for HBO series.</description>
+        <image>chernobyl-history.jpg</image>
+        <stock>41</stock>
+    </book>
+    <book id="87">
+        <title>The Silk Roads</title>
+        <author>Peter Frankopan</author>
+        <genre>History</genre>
+        <price>19.00</price>
+        <rating>4.6</rating>
+        <description>"The Silk Roads" by Peter Frankopan reorients world history around Central Asia's trade routes, from ancient to modern, highlighting East's influence on West. Covering empires, religions, and globalization, published in 2015, it's sweeping narrative challenging Eurocentrism, bestseller for fresh global perspective.</description>
+        <image>silk-roads.jpg</image>
+        <stock>36</stock>
+    </book>
+    <book id="88">
+        <title>Endurance: Shackleton's Incredible Voyage</title>
+        <author>Alfred Lansing</author>
+        <genre>History</genre>
+        <price>15.95</price>
+        <rating>4.9</rating>
+        <description>"Endurance" by Alfred Lansing recounts Ernest Shackleton's 1914 Antarctic expedition, where ship Endurance is crushed by ice, leading to epic survival. Based on diaries, published in 1959, it's thrilling adventure on leadership and resilience, bestseller inspiring explorers and readers alike.</description>
+        <image>endurance.jpg</image>
+        <stock>44</stock>
+    </book>
+
+    <book id="89">
+        <title>The Giver</title>
+        <author>Lois Lowry</author>
+        <genre>Children's Books</genre>
+        <price>9.99</price>
+        <rating>4.7</rating>
+        <description>"The Giver" is Lois Lowry's dystopian novel about Jonas in a "perfect" society without pain or choice, assigned to receive memories from The Giver. Discovering color, love, and suffering, he questions conformity. Published in 1993, Newbery winner, it's thought-provoking on freedom, used in schools for ethics discussions.</description>
+        <image>giver.jpg</image>
+        <stock>52</stock>
+    </book>
+    <book id="90">
+        <title>Holes</title>
+        <author>Louis Sachar</author>
+        <genre>Children's Books</genre>
+        <price>11.00</price>
+        <rating>4.8</rating>
+        <description>"Holes" is Louis Sachar's adventure about Stanley Yelnats, wrongly sent to Camp Green Lake digging holes, uncovering family curse and warden's treasure hunt. Interweaving past and present, published in 1998, Newbery winner, it's clever mystery on justice and friendship, adapted into film.</description>
+        <image>holes.jpg</image>
+        <stock>48</stock>
+    </book>
+    <book id="91">
+        <title>The Book Thief</title>
+        <author>Markus Zusak</author>
+        <genre>Children's Books</genre>
+        <price>14.50</price>
+        <rating>4.9</rating>
+        <description>"The Book Thief" is Markus Zusak's WWII novel narrated by Death about foster girl Liesel Meminger stealing books in Nazi Germany, finding solace in words amid bombing and hiding a Jew. Published in 2005, it's poignant on humanity and loss, bestseller adapted into film.</description>
+        <image>book-thief.jpg</image>
+        <stock>56</stock>
+    </book>
+    <book id="92">
+        <title>Bridge to Terabithia</title>
+        <author>Katherine Paterson</author>
+        <genre>Children's Books</genre>
+        <price>8.99</price>
+        <rating>4.7</rating>
+        <description>"Bridge to Terabithia" is Katherine Paterson's heartfelt story of Jess Aarons and Leslie Burke creating imaginary kingdom Terabithia, dealing with bullying and family. Tragedy strikes, teaching grief and courage. Published in 1977, Newbery winner, it's emotional classic on friendship, adapted into film.</description>
+        <image>bridge-terabithia.jpg</image>
+        <stock>43</stock>
+    </book>
+    <book id="93">
+        <title>A Series of Unfortunate Events</title>
+        <author>Lemony Snicket</author>
+        <genre>Children's Books</genre>
+        <price>12.50</price>
+        <rating>4.6</rating>
+        <description>"A Series of Unfortunate Events" is Lemony Snicket's darkly humorous series opener about Baudelaire orphans Violet, Klaus, and Sunny pursued by villainous Count Olaf for their fortune. Full of inventions and wordplay, published in 1999, it's gothic adventure, adapted for Netflix, warning readers of misery.</description>
+        <image>unfortunate-events.jpg</image>
+        <stock>51</stock>
+    </book>
+
+    <book id="94">
+        <title>Little Fires Everywhere</title>
+        <author>Celeste Ng</author>
+        <genre>Fiction</genre>
+        <price>17.00</price>
+        <rating>4.5</rating>
+        <description>"Little Fires Everywhere" by Celeste Ng explores class, race, and motherhood in 1990s Shaker Heights, where artist Mia Warren and daughter Pearl disrupt the Richardson family's ordered life, culminating in a custody battle. Published in 2017, bestseller adapted for Hulu, insightful on secrets and identity.</description>
+        <image>little-fires.jpg</image>
+        <stock>37</stock>
+    </book>
+    <book id="95">
+        <title>The Poisonwood Bible</title>
+        <author>Barbara Kingsolver</author>
+        <genre>Fiction</genre>
+        <price>16.99</price>
+        <rating>4.6</rating>
+        <description>"The Poisonwood Bible" by Barbara Kingsolver follows missionary Price family in 1959 Congo, narrated by wife and daughters adapting to culture and independence struggle. Exploring colonialism and faith, published in 1998, Oprah pick, it's rich in voices and themes, a modern classic.</description>
+        <image>poisonwood-bible.jpg</image>
+        <stock>34</stock>
+    </book>
+    <book id="96">
+        <title>Big Magic</title>
+        <author>Elizabeth Gilbert</author>
+        <genre>Fiction</genre>
+        <price>16.00</price>
+        <rating>4.6</rating>
+        <description>"Big Magic" by Elizabeth Gilbert is inspirational guide to creative living, encouraging fearlessness in pursuing art. Drawing from her experiences, it views ideas as magical entities and advocates curiosity over suffering. Published in 2015, bestseller empowers artists with joy and permission to create.</description>
+        <image>big-magic.jpg</image>
+        <stock>41</stock>
+    </book>
+
+    <book id="97">
+        <title>Blink</title>
+        <author>Malcolm Gladwell</author>
+        <genre>Non-Fiction</genre>
+        <price>16.00</price>
+        <rating>4.5</rating>
+        <description>"Blink" by Malcolm Gladwell examines rapid cognition and intuition's power, using stories from art authentication to police shootings. Exploring snap judgments' strengths and pitfalls, published in 2005, it's engaging pop psychology, bestseller influencing decision-making insights.</description>
+        <image>blink.jpg</image>
+        <stock>44</stock>
+    </book>
+    <book id="98">
+        <title>Outliers</title>
+        <author>Malcolm Gladwell</author>
+        <genre>Non-Fiction</genre>
+        <price>17.50</price>
+        <rating>4.6</rating>
+        <description>"Outliers" by Malcolm Gladwell redefines success, arguing it's not just talent but opportunity, culture, and 10,000 hours practice, using examples like Bill Gates and Beatles. Published in 2008, bestseller challenges meritocracy, insightful on hidden advantages.</description>
+        <image>outliers.jpg</image>
+        <stock>38</stock>
+    </book>
+
+    <book id="99">
+        <title>Brave New World</title>
+        <author>Aldous Huxley</author>
+        <genre>Science Fiction</genre>
+        <price>14.99</price>
+        <rating>4.7</rating>
+        <description>"Brave New World" by Aldous Huxley depicts a dystopian future of genetic engineering, conditioning, and pleasure-drug soma for stability, where outsider Bernard Marx questions conformity. Published in 1932, it's satirical warning on technology and consumerism, classic contrasting with "1984."</description>
+        <image>brave-new-world.jpg</image>
+        <stock>32</stock>
+    </book>
+    <book id="100">
+        <title>Hyperion</title>
+        <author>Dan Simmons</author>
+        <genre>Science Fiction</genre>
+        <price>16.00</price>
+        <rating>4.7</rating>
+        <description>"Hyperion" by Dan Simmons is Canterbury Tales-inspired sci-fi where seven pilgrims share stories en route to Hyperion's Time Tombs and the Shrike. Blending genres, published in 1989, Hugo winner, it's epic with rich world-building in Hegemony universe.</description>
+        <image>hyperion.jpg</image>
+        <stock>39</stock>
+    </book>
+
+    <book id="101">
+        <title>The Girl Who Played with Fire</title>
+        <author>Stieg Larsson</author>
+        <genre>Mystery &amp; Thriller</genre>
+        <price>18.99</price>
+        <rating>4.7</rating>
+        <description>"The Girl Who Played with Fire" is Stieg Larsson's Millennium sequel where Lisbeth Salander is accused of murders while investigating sex trafficking, with Mikael Blomkvist helping clear her. Published in 2006, it's intense thriller on vengeance and corruption, bestseller continuing Salander's saga.</description>
+        <image>played-with-fire.jpg</image>
+        <stock>36</stock>
+    </book>
+    <book id="102">
+        <title>Before I Go to Sleep</title>
+        <author>S.J. Watson</author>
+        <genre>Mystery &amp; Thriller</genre>
+        <price>15.50</price>
+        <rating>4.3</rating>
+        <description>"Before I Go to Sleep" by S.J. Watson follows Christine Lucas, who wakes daily with amnesia, relying on husband Ben and journal. Uncovering discrepancies, she questions her life. Published in 2011, psychological thriller with twists, bestseller adapted into film on memory and trust.</description>
+        <image>before-sleep.jpg</image>
+        <stock>42</stock>
+    </book>
+
+    <book id="103">
+        <title>The Rosie Project</title>
+        <author>Graeme Simsion</author>
+        <genre>Romance</genre>
+        <price>16.00</price>
+        <rating>4.5</rating>
+        <description>"The Rosie Project" is Graeme Simsion's humorous romance about genetics professor Don Tillman using a questionnaire to find a wife, but chaotic Rosie Jarman upends his plans in a quest for her father. Published in 2013, it's charming on neurodiversity and love, bestseller with sequels.</description>
+        <image>rosie-project.jpg</image>
+        <stock>49</stock>
+    </book>
+    <book id="104">
+        <title>Me Before You</title>
+        <author>Jojo Moyes</author>
+        <genre>Romance</genre>
+        <price>15.99</price>
+        <rating>4.8</rating>
+        <description>"Me Before You" by Jojo Moyes is emotional romance about Louisa Clark caring for quadriplegic Will Traynor, who plans assisted suicide. Their bond changes perspectives on life and love. Published in 2012, bestseller adapted into film, sparking debates on disability and choice.</description>
+        <image>me-before-you.jpg</image>
+        <stock>47</stock>
+    </book>
+
+    <book id="105">
+        <title>Wild</title>
+        <author>Cheryl Strayed</author>
+        <genre>Biography</genre>
+        <price>16.00</price>
+        <rating>4.6</rating>
+        <description>"Wild" is Cheryl Strayed's memoir of hiking 1,100 miles on Pacific Crest Trail after mother's death and divorce, facing physical and emotional trials for self-discovery. Published in 2012, Oprah pick, bestseller adapted into film, inspiring on grief, strength, and nature's healing.</description>
+        <image>wild-strayed.jpg</image>
+        <stock>35</stock>
+    </book>
+    <book id="106">
+        <title>Greenlights</title>
+        <author>Matthew McConaughey</author>
+        <genre>Biography</genre>
+        <price>20.00</price>
+        <rating>4.7</rating>
+        <description>"Greenlights" is Matthew McConaughey's unconventional memoir of "greenlights"—affirmations from life experiences, from Texas upbringing to Hollywood success, arrests, and philosophy. With poems and photos, published in 2020, bestseller celebrates adventure and wisdom, with his signature charisma.</description>
+        <image>greenlights.jpg</image>
+        <stock>40</stock>
+    </book>
+
+    <book id="107">
+        <title>Pride and Prejudice</title>
+        <author>Jane Austen</author>
+        <genre>Classic Literature</genre>
+        <price>14.99</price>
+        <rating>4.9</rating>
+        <description>"Pride and Prejudice" is Jane Austen's witty romance about Elizabeth Bennet and Mr. Darcy's evolving relationship amid class and misunderstanding in Regency England. Satirizing society and marriage, published in 1813, it's timeless classic on love and character, adapted countless times.</description>
+        <image>pride-prejudice.jpg</image>
+        <stock>60</stock>
+    </book>
+    <book id="108">
+        <title>Moby Dick</title>
+        <author>Herman Melville</author>
+        <genre>Classic Literature</genre>
+        <price>16.50</price>
+        <rating>4.7</rating>
+        <description>"Moby-Dick" by Herman Melville is epic tale of Captain Ahab's obsessive quest for white whale Moby Dick, narrated by Ishmael on whaler Pequod. Blending adventure, philosophy, and whaling lore, published in 1851, it's American literature masterpiece on fate and nature.</description>
+        <image>moby-dick.jpg</image>
+        <stock>55</stock>
+    </book>
+    <book id="109">
+        <title>Great Expectations</title>
+        <author>Charles Dickens</author>
+        <genre>Classic Literature</genre>
+        <price>15.99</price>
+        <rating>4.8</rating>
+        <description>"Great Expectations" by Charles Dickens follows orphan Pip's rise with mysterious benefactor, loving Estella, and discovering truths about class and ambition. Victorian bildungsroman, published in 1861, it's rich in characters and themes, classic on identity and morality.</description>
+        <image>great-expectations.jpg</image>
+        <stock>58</stock>
+    </book>
+    <book id="110">
+        <title>War and Peace</title>
+        <author>Leo Tolstoy</author>
+        <genre>Classic Literature</genre>
+        <price>19.99</price>
+        <rating>4.9</rating>
+        <description>"War and Peace" by Leo Tolstoy is monumental novel interweaving Russian aristocracy's lives during Napoleonic Wars, with philosophical essays on history. Focusing on Pierre, Andrei, and Natasha, published 1869, it's epic on fate, love, and war, literature's pinnacle.</description>
+        <image>war-peace.jpg</image>
+        <stock>45</stock>
+    </book>
+</bookstore>

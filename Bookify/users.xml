@@ -2,6 +2,6 @@
 <users>
     <user>
         <email>test@example.com</email>
-        <password>hashed_password_here</password>
+        <password>password</password>
     </user>
 </users>
