@@ -231,12 +231,3 @@ For issues, questions, or suggestions:
 2. Review the code comments in `app.js`
 3. Examine browser console for errors
 
----
-
-**Note**: This is a frontend-only application for demonstration purposes. In a production environment, you would need:
-- Backend API for user authentication and data persistence
-- Database for storing user information and orders
-- Secure payment gateway integration
-- SSL certificate for HTTPS
-
-Enjoy your Bookify experience! 📖✨
