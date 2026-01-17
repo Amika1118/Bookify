@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user>
+        <email>test@example.com</email>
+        <password>hashed_password_here</password>
+    </user>
+</users>

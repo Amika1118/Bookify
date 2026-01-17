@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookify - Your Online Bookstore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#/" class="logo">📚 Bookify</a>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search books or authors...">
+                <button id="searchBtn">Search</button>
+            </div>
+            <nav>
+                <a href="#/">Home</a>
+                <a href="#/genres">Genres</a>
+                <a href="#/favorites">Favorites</a>
+                <div class="cart-icon" id="cartIcon">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <button id="themeToggle" class="theme-toggle" title="Toggle Dark/Light Mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button id="loginBtn" class="login-btn">Login</button>
+                <button id="logoutBtn" class="logout-btn" style="display: none;">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Promotional Banner -->
+    <div class="promo-banner">
+        🎉 Special Offer: Get 20% off on all Fiction books! Use code: FICTION20
+    </div>
+
+    <!-- Main Content Area -->
+    <main id="mainContent">
+        <!-- Content will be dynamically loaded here -->
+    </main>
+
+    <!-- Book Carousel/Rolling Ads -->
+    <div class="carousel-container">
+        <h2>Featured Book Ads</h2>
+        <div class="carousel" id="bookCarousel">
+            <!-- Carousel items will be dynamically loaded -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Bookify</h3>
+                <p>Your trusted online bookstore with thousands of titles across all genres.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#/genres">Browse Genres</a></li>
+                    <li><a href="#/favorites">My Favorites</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@bookify.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bookify. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Auth Modal (Login/Signup/Reset) -->
+    <div id="authModal" class="modal">
+        <div class="modal-content auth-modal">
+            <span class="close" id="closeAuth">&times;</span>
+            <h2 class="auth-title">Login to Bookify</h2>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn-primary btn-block">Login</button>
+                <div class="auth-links">
+                    <a href="#" id="switchToSignup">Create Account</a>
+                    <a href="#" id="switchToReset">Forgot Password?</a>
+                </div>
+            </form>
+            
+            <!-- Signup Form -->
+            <form id="signupForm" class="auth-form" style="display: none;">
+                <div class="form-group">
+                    <label for="signupEmail">Email:</label>
+                    <input type="email" id="signupEmail" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" required placeholder="••••••••" minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn-primary btn-block">Create Account</button>
+                <div class="auth-links">
+                    <a href="#" id="switchToLoginFromSignup">Already have an account? Login</a>
+                </div>
+            </form>
+            
+            <!-- Reset Password Form -->
+            <form id="resetForm" class="auth-form" style="display: none;">
+                <div class="form-group">
+                    <label for="resetEmail">Email:</label>
+                    <input type="email" id="resetEmail" required placeholder="your@email.com">
+                </div>
+                <p class="form-note">We'll send a password reset link to your email.</p>
+                <button type="submit" class="btn-primary btn-block">Reset Password</button>
+                <div class="auth-links">
+                    <a href="#" id="switchToLoginFromReset">Back to Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
